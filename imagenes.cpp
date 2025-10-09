@@ -628,9 +628,20 @@ void ver_histograma (int nfoto, int ncanal, int nres)
     int bins[1]= {256};
     float rango[2]= {0, 256};
     const float *rangos[]= {rango};
-    calcHist(&gris, 1, canales, noArray(), hist, 1, bins, rangos);
+    if (ncanal == 3)
+        calcHist(&gris, 1, canales, noArray(), hist, 1, bins, rangos);
+    else
+        calcHist(&img, 1, &ncanal, noArray(), hist, 1, bins, rangos);
+    double vmin, vmax;
+    minMaxLoc(hist, &vmin, &vmax);
+    Scalar color;
+    if (ncanal==0) color= CV_RGB(0,0,255);
+    else if(ncanal==1) color=CV_RGB(0,255,0);
+    else if(ncanal==2) color=CV_RGB(255,0,0);
+    else color= CV_RGB(0,0,0);
     for (int i= 0; i<256; i++) {
-        rectangle(imhist, Point(i*391.0/256,185), Point((i+1)*391.0/256, 185 - hist.at<float>(i)), CV_RGB(0,0,0), -1);
+        rectangle(imhist, Point(3 + i*391.0/256,185),
+                  Point(3 + (i+1)*391.0/256, 185 - hist.at<float>(i)*182/vmax), color, -1);
     }
     crear_nueva(nres,imhist);
 

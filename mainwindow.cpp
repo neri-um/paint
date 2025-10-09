@@ -354,7 +354,9 @@ void MainWindow::on_actionElipse_triggered()
 
 void MainWindow::on_actionRojo_triggered()
 {
-
+    if(foto_activa() != -1 && primera_libre() != -1){
+        ver_histograma(foto_activa(), 2, primera_libre());
+    }
 }
 
 
@@ -362,6 +364,22 @@ void MainWindow::on_actionGrises_triggered()
 {
     if(foto_activa() != -1 && primera_libre() != -1){
         ver_histograma(foto_activa(), 3, primera_libre());
+    }
+}
+
+
+void MainWindow::on_actionVerde_triggered()
+{
+    if(foto_activa() != -1 && primera_libre() != -1){
+        ver_histograma(foto_activa(), 1, primera_libre());
+    }
+}
+
+
+void MainWindow::on_actionAzul_triggered()
+{
+    if(foto_activa() != -1 && primera_libre() != -1){
+        ver_histograma(foto_activa(), 0, primera_libre());
     }
 }
 

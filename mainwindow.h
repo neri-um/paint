@@ -65,6 +65,8 @@ private slots:
     void on_actionElipse_triggered();
     void on_actionRojo_triggered();
     void on_actionGrises_triggered();
+    void on_actionVerde_triggered();
+    void on_actionAzul_triggered();
 };
 
 extern MainWindow *w;
