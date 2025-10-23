@@ -688,7 +688,7 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="actionCaptura_de_Camara">
    <property name="text">
-    <string>Captura de Camara</string>
+    <string>Captura de cámara...</string>
    </property>
   </action>
   <action name="actionAjuste_Lineal_Histograma">
@@ -698,7 +698,7 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="actionArcoiris">
    <property name="text">
-    <string>Arcoiris</string>
+    <string>Arcoíris</string>
    </property>
   </action>
   <action name="actionCaptura_de_video">
