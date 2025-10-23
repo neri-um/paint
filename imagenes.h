@@ -40,7 +40,7 @@ struct ventana {
 //    Enumerado con los distintos tipos posibles de herramientas
 //    que se pueden usar. Añadir nuevas aquí
 
-enum tipo_herramienta {HER_PUNTO, HER_LINEA, HER_SELECCION, HER_RECTANGULO, HER_ELIPSE};
+enum tipo_herramienta {HER_PUNTO, HER_LINEA, HER_SELECCION, HER_RECTANGULO, HER_ELIPSE, HER_ARCOIRIS};
 
 
 ///////////////////////////////////////////////////////////////////
@@ -128,6 +128,10 @@ void invertir (int nfoto, int nres);
 // Invierte la imagen contenida en nfoto y la almacena en nres, que será una
 // nueva ventana
 
+
+void copiar_a_nueva (int nfoto, int nres);
+    //Copiar el ROI de la foto actual a una imagen nueva
+
 void rotar_angulo (Mat imagen, Mat &imgRes, double angulo, double escala= 1.0, int modo= 0);
 // Rota la imagen contenida en imagen, en la cantidad grado (grados
 // de 0 a 360) y almacena el resultado en imgRes. La imagen de salida
@@ -146,6 +150,12 @@ void ver_brillo_contraste (int nfoto, double suma, double prod,
 // Modifica la imagen en nfoto, tomando para cada píxel A(x,y) el valor:
 // A(x,y)*prod + suma. Si guardar==true se guarda la imagen, y en otro caso
 // solo se visualiza el resultado, pero sin guardar
+
+void ver_brillo_contraste_gama (int nfoto, double suma, double prod, double gama, bool guardar);
+
+void ajuste_lineal_hist(int nfoto, double pmin, double pmax, bool guardar = false);
+//Operación ajuste lineal del histograma
+
 
 void ver_suavizado (int nfoto, int ntipo, int tamx, int tamy,
                     bool guardar= false);

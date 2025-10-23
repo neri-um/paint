@@ -245,7 +245,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QToolButton" name="toolButton_5">
     <property name="geometry">
      <rect>
-      <x>170</x>
+      <x>210</x>
       <y>0</y>
       <width>41</width>
       <height>41</height>
@@ -274,7 +274,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QToolButton" name="toolButton_6">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>330</x>
       <y>0</y>
       <width>41</width>
       <height>41</height>
@@ -319,7 +319,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QToolButton" name="toolButton_7">
     <property name="geometry">
      <rect>
-      <x>210</x>
+      <x>250</x>
       <y>0</y>
       <width>41</width>
       <height>41</height>
@@ -342,7 +342,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QToolButton" name="toolButton_8">
     <property name="geometry">
      <rect>
-      <x>250</x>
+      <x>290</x>
       <y>0</y>
       <width>41</width>
       <height>41</height>
@@ -354,6 +354,35 @@ p, li { white-space: pre-wrap; }
     <property name="icon">
      <iconset resource="recursos.qrc">
       <normaloff>:/imagenes/elipse.png</normaloff>:/imagenes/elipse.png</iconset>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="autoExclusive">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="toolButton_9">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>0</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Arcoiris</string>
+    </property>
+    <property name="icon">
+     <iconset resource="recursos.qrc">
+      <normaloff>:/imagenes/arcoiris.png</normaloff>:/imagenes/arcoiris.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>32</width>
+      <height>32</height>
+     </size>
     </property>
     <property name="checkable">
      <bool>true</bool>
@@ -378,6 +407,8 @@ p, li { white-space: pre-wrap; }
     </property>
     <addaction name="actionNueva_imagen"/>
     <addaction name="actionAbrir_imagen"/>
+    <addaction name="actionCaptura_de_Camara"/>
+    <addaction name="actionCaptura_de_video"/>
     <addaction name="separator"/>
     <addaction name="actionGuardar"/>
     <addaction name="actionGuardar_como"/>
@@ -406,6 +437,7 @@ p, li { white-space: pre-wrap; }
      <addaction name="actionGrises"/>
     </widget>
     <addaction name="actionSeleccionar_todo"/>
+    <addaction name="actionCopiar_a_nueva"/>
     <addaction name="separator"/>
     <addaction name="menuVer_histograma"/>
     <addaction name="menuOpciones"/>
@@ -415,6 +447,7 @@ p, li { white-space: pre-wrap; }
      <string>Herramientas</string>
     </property>
     <addaction name="actionPunto"/>
+    <addaction name="actionArcoiris"/>
     <addaction name="actionLinea"/>
     <addaction name="actionRect_ngulo"/>
     <addaction name="actionElipse"/>
@@ -436,6 +469,7 @@ p, li { white-space: pre-wrap; }
     <addaction name="actionInvertir"/>
     <addaction name="menuRotar"/>
     <addaction name="actionMedia_ponderada"/>
+    <addaction name="actionAjuste_Lineal_Histograma"/>
    </widget>
    <widget class="QMenu" name="menuEfectos">
     <property name="title">
@@ -554,7 +588,7 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="actionBrillo_contraste">
    <property name="text">
-    <string>Brillo/Contraste...</string>
+    <string>Brillo/Contraste/Gama...</string>
    </property>
   </action>
   <action name="actionInvertir">
@@ -645,6 +679,31 @@ p, li { white-space: pre-wrap; }
   <action name="actionGrises">
    <property name="text">
     <string>Grises</string>
+   </property>
+  </action>
+  <action name="actionCopiar_a_nueva">
+   <property name="text">
+    <string>Copiar a nueva</string>
+   </property>
+  </action>
+  <action name="actionCaptura_de_Camara">
+   <property name="text">
+    <string>Captura de Camara</string>
+   </property>
+  </action>
+  <action name="actionAjuste_Lineal_Histograma">
+   <property name="text">
+    <string>Ajuste Lineal Histograma...</string>
+   </property>
+  </action>
+  <action name="actionArcoiris">
+   <property name="text">
+    <string>Arcoiris</string>
+   </property>
+  </action>
+  <action name="actionCaptura_de_video">
+   <property name="text">
+    <string>Captura de video...</string>
    </property>
   </action>
  </widget>

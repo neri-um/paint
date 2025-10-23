@@ -249,11 +249,11 @@ void cb_close (int factual)
 
 //---------------------------------------------------------------------------
 
-void cb_punto (int factual, int x, int y)
+void cb_punto (int factual, int x, int y, Scalar color)
 {
     Mat im= foto[factual].img;  // Ojo: esto no es una copia, sino a la misma imagen
     if (difum_pincel==0)
-        circle(im, Point(x, y), radio_pincel, color_pincel, -1, LINE_AA);
+        circle(im, Point(x, y), radio_pincel, color, -1, LINE_AA);
     else {
         int t = radio_pincel+difum_pincel;
         int posx= t, posy=t;
@@ -277,7 +277,7 @@ void cb_punto (int factual, int x, int y)
         }
 
         Mat trozo= im(roi);
-        Mat res(trozo.size(), im.type(), color_pincel);
+        Mat res(trozo.size(), im.type(), color);
         Mat cop(trozo.size(), im.type(), CV_RGB(0,0,0));
         circle(cop, Point(posx, posy), radio_pincel, CV_RGB(255,255,255), -1, LINE_AA);
         blur(cop, cop, Size(difum_pincel*2+1, difum_pincel*2+1));
@@ -421,6 +421,43 @@ void cb_ver_seleccion (int factual, int x, int y, bool foto_roi)
 
 //---------------------------------------------------------------------------
 
+Scalar color_arcoiris()
+{
+    static int estado=0;
+    static Scalar colorAct= CV_RGB(255,0,0);
+    int inc = 8;
+    switch (estado){
+    case 0:
+        colorAct.val[1] += inc;
+        if (colorAct.val[1]>=255) estado++;
+        break;
+    case 1:
+        colorAct.val[2]-= inc;
+        if(colorAct.val[2]<=0) estado++;
+        break;
+    case 2:
+        colorAct.val[0]+= inc;
+        if (colorAct.val[0]>=255) estado++;
+        break;
+    case 3:
+        colorAct.val[1]-= inc;
+        if (colorAct.val[1]<=0) estado++;
+        break;
+    case 4:
+        colorAct.val[2]+= inc;
+        if (colorAct.val[2]>=255) estado++;
+        break;
+    case 5:
+        colorAct.val[0]-= inc;
+        if (colorAct.val[0]<=0) estado=0;
+    }
+    return colorAct;
+}
+
+
+//---------------------------------------------------------------------------
+
+
 void callback (int event, int x, int y, int flags, void *_nfoto)
 {
     int factual= (long long) _nfoto;
@@ -455,7 +492,7 @@ void callback (int event, int x, int y, int flags, void *_nfoto)
     // 2.1. Herramienta PUNTO
     case HER_PUNTO:
         if (flags==EVENT_FLAG_LBUTTON && event!=EVENT_LBUTTONUP)
-            cb_punto(factual, x, y);
+            cb_punto(factual, x, y, color_pincel);
         else
             ninguna_accion(factual, x, y);
         break;
@@ -499,6 +536,13 @@ void callback (int event, int x, int y, int flags, void *_nfoto)
             ninguna_accion(factual, x, y);
         break;
 
+    // 2.6. Herramienta ARCOIRIS
+    case HER_ARCOIRIS:
+        if (flags==EVENT_FLAG_LBUTTON && event!=EVENT_LBUTTONUP)
+            cb_punto(factual, x, y, color_arcoiris());
+        else
+            ninguna_accion(factual, x, y);
+        break;
     }
     escribir_barra_estado();
 }
@@ -578,6 +622,26 @@ void ver_brillo_contraste (int nfoto, double suma, double prod, bool guardar)
 
 //---------------------------------------------------------------------------
 
+
+void ver_brillo_contraste_gama (int nfoto, double suma, double prod, double gama, bool guardar)
+{
+    assert(nfoto>=0 && nfoto<MAX_VENTANAS && foto[nfoto].usada);
+    Mat img;
+    foto[nfoto].img.convertTo(img, CV_8UC3, prod, suma);
+    Mat img32f;
+    img.convertTo(img32f, CV_32FC3, 1.0/255);
+    pow(img32f, gama, img32f);
+    img32f.convertTo(img, CV_8UC3, 255.0);
+    imshow(foto[nfoto].nombre, img);
+    if (guardar) {
+        img.copyTo(foto[nfoto].img);
+        foto[nfoto].modificada= true;
+    }
+}
+
+//---------------------------------------------------------------------------
+
+
 void ver_suavizado (int nfoto, int ntipo, int tamx, int tamy, bool guardar)
 {
     assert(nfoto>=0 && nfoto<MAX_VENTANAS && foto[nfoto].usada);
@@ -613,6 +677,47 @@ void media_ponderada (int nf1, int nf2, int nueva, double peso)
 }
 
 //---------------------------------------------------------------------------
+
+void ajuste_lineal_hist(int nfoto, double pmin, double pmax, bool guardar)
+{
+    Mat img= foto[nfoto].img;
+    Mat gris;
+    Mat hist;
+    cvtColor(img, gris, COLOR_BGR2GRAY); // Conversión a gris
+    int canales[1]= {0};
+    int bins[1]= {256};
+    float rango[2]= {0, 256};
+    const float *rangos[]= {rango};
+    calcHist(&gris, 1, canales, noArray(), hist, 1, bins, rangos);
+    normalize(hist, hist, 100, 0, NORM_L1);
+    int m =0,M=255;
+    double acum=0;
+    for (int i=0; i<256 && acum < pmin; i++, m++){
+        acum += hist.at<float>(i);
+    }
+    acum=0;
+    for (int i=255; i>=0 && acum < pmax; i--, M--){
+        acum += hist.at<float>(i);
+    }
+    if (M<=m)
+        M = m+1;
+
+    Mat imres;
+    double a = 255.0/(M-m);
+    double b = -m*a;
+
+    img.convertTo(imres, img.type(), a, b);
+    imshow(foto[nfoto].nombre, imres);
+    if (guardar) {
+        imres.copyTo(foto[nfoto].img);
+        foto[nfoto].modificada=true;
+    }
+}
+
+
+
+//---------------------------------------------------------------------------
+
 
 void ver_histograma (int nfoto, int ncanal, int nres)
 {
@@ -656,3 +761,10 @@ string Lt1(string cadena)
 }
 
 //---------------------------------------------------------------------------
+
+
+void copiar_a_nueva (int nfoto, int nres)
+{
+    Mat img= foto[nfoto].img(foto[nfoto].roi).clone();
+    crear_nueva(nres,img);
+}

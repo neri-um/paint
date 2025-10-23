@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>brillocontraste</class>
- <widget class="QDialog" name="brillocontraste">
+ <class>brillocontrastegamma</class>
+ <widget class="QDialog" name="brillocontrastegamma">
   <property name="windowModality">
    <enum>Qt::WindowModality::WindowModal</enum>
   </property>
@@ -10,25 +10,31 @@
     <x>0</x>
     <y>0</y>
     <width>380</width>
-    <height>150</height>
+    <height>201</height>
    </rect>
   </property>
   <property name="sizePolicy">
    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
     <horstretch>0</horstretch>
-    <verstretch>0</verstretch>
+    <verstretch>6</verstretch>
    </sizepolicy>
   </property>
   <property name="minimumSize">
    <size>
     <width>380</width>
-    <height>150</height>
+    <height>201</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>380</width>
-    <height>150</height>
+    <height>201</height>
+   </size>
+  </property>
+  <property name="sizeIncrement">
+   <size>
+    <width>0</width>
+    <height>6</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -42,7 +48,7 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>110</y>
+     <y>170</y>
      <width>161</width>
      <height>32</height>
     </rect>
@@ -182,8 +188,8 @@ color: rgb(255, 255, 255);</string>
   <widget class="QCheckBox" name="checkBox">
    <property name="geometry">
     <rect>
-     <x>190</x>
-     <y>118</y>
+     <x>200</x>
+     <y>180</y>
      <width>101</width>
      <height>17</height>
     </rect>
@@ -195,6 +201,67 @@ color: rgb(255, 255, 255);</string>
     <bool>true</bool>
    </property>
   </widget>
+  <widget class="QSlider" name="horizontalSlider_3">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>130</y>
+     <width>271</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>0</number>
+   </property>
+   <property name="maximum">
+    <number>100</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Orientation::Horizontal</enum>
+   </property>
+   <property name="tickPosition">
+    <enum>QSlider::TickPosition::TicksBelow</enum>
+   </property>
+   <property name="tickInterval">
+    <number>10</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>110</y>
+     <width>271</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(128, 128, 128);
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>Contraste</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinBox_3">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>120</y>
+     <width>81</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>-100</number>
+   </property>
+   <property name="maximum">
+    <number>100</number>
+   </property>
+  </widget>
  </widget>
  <resources>
   <include location="recursos.qrc"/>
@@ -203,7 +270,7 @@ color: rgb(255, 255, 255);</string>
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>brillocontraste</receiver>
+   <receiver>brillocontrastegamma</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -219,7 +286,7 @@ color: rgb(255, 255, 255);</string>
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>brillocontraste</receiver>
+   <receiver>brillocontrastegamma</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

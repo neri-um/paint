@@ -81,7 +81,13 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         "on_actionRojo_triggered",
         "on_actionGrises_triggered",
         "on_actionVerde_triggered",
-        "on_actionAzul_triggered"
+        "on_actionAzul_triggered",
+        "on_actionCopiar_a_nueva_triggered",
+        "on_actionCaptura_de_Camara_triggered",
+        "on_actionAjuste_Lineal_Histograma_triggered",
+        "on_toolButton_9_clicked",
+        "on_actionArcoiris_triggered",
+        "on_actionCaptura_de_video_triggered"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -171,6 +177,18 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         QtMocHelpers::SlotData<void()>(42, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_actionAzul_triggered'
         QtMocHelpers::SlotData<void()>(43, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_actionCopiar_a_nueva_triggered'
+        QtMocHelpers::SlotData<void()>(44, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_actionCaptura_de_Camara_triggered'
+        QtMocHelpers::SlotData<void()>(45, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_actionAjuste_Lineal_Histograma_triggered'
+        QtMocHelpers::SlotData<void()>(46, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_toolButton_9_clicked'
+        QtMocHelpers::SlotData<void()>(47, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_actionArcoiris_triggered'
+        QtMocHelpers::SlotData<void()>(48, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_actionCaptura_de_video_triggered'
+        QtMocHelpers::SlotData<void()>(49, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -235,6 +253,12 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 38: _t->on_actionGrises_triggered(); break;
         case 39: _t->on_actionVerde_triggered(); break;
         case 40: _t->on_actionAzul_triggered(); break;
+        case 41: _t->on_actionCopiar_a_nueva_triggered(); break;
+        case 42: _t->on_actionCaptura_de_Camara_triggered(); break;
+        case 43: _t->on_actionAjuste_Lineal_Histograma_triggered(); break;
+        case 44: _t->on_toolButton_9_clicked(); break;
+        case 45: _t->on_actionArcoiris_triggered(); break;
+        case 46: _t->on_actionCaptura_de_video_triggered(); break;
         default: ;
         }
     }
@@ -259,14 +283,14 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 41)
+        if (_id < 47)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 41;
+        _id -= 47;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 41)
+        if (_id < 47)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 41;
+        _id -= 47;
     }
     return _id;
 }

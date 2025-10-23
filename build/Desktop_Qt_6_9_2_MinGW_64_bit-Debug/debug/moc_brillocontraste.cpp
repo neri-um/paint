@@ -48,7 +48,9 @@ template <> constexpr inline auto brillocontraste::qt_create_metaobjectdata<qt_m
         "on_checkBox_stateChanged",
         "arg1",
         "on_brillocontraste_accepted",
-        "on_brillocontraste_rejected"
+        "on_brillocontraste_rejected",
+        "on_spinBox_3_valueChanged",
+        "on_horizontalSlider_3_valueChanged"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -76,6 +78,14 @@ template <> constexpr inline auto brillocontraste::qt_create_metaobjectdata<qt_m
         QtMocHelpers::SlotData<void()>(9, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_brillocontraste_rejected'
         QtMocHelpers::SlotData<void()>(10, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_spinBox_3_valueChanged'
+        QtMocHelpers::SlotData<void(int)>(11, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Int, 8 },
+        }}),
+        // Slot 'on_horizontalSlider_3_valueChanged'
+        QtMocHelpers::SlotData<void(int)>(12, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Int, 5 },
+        }}),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -106,6 +116,8 @@ void brillocontraste::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
         case 4: _t->on_checkBox_stateChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         case 5: _t->on_brillocontraste_accepted(); break;
         case 6: _t->on_brillocontraste_rejected(); break;
+        case 7: _t->on_spinBox_3_valueChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 8: _t->on_horizontalSlider_3_valueChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         default: ;
         }
     }
@@ -130,14 +142,14 @@ int brillocontraste::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 7)
+        if (_id < 9)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 7;
+        _id -= 9;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 7)
+        if (_id < 9)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 7;
+        _id -= 9;
     }
     return _id;
 }

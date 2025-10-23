@@ -3,6 +3,7 @@
 #include <QFileDialog>
 #include <QColorDialog>
 #include <QMessageBox>
+#include "video.h"
 
 #include <opencv2/opencv.hpp>
 using namespace cv;
@@ -15,6 +16,8 @@ using namespace cv;
 #include "mediaponderada.h"
 #include "rotaravideo.h"
 #include "suavizados.h"
+#include "ajustelineal.h"
+#include "capturadevideo.h"
 
 QString FiltroImagen = "Todos los formatos (*.jpg *.jpeg *.jpe .jp2 *.tif *.tiff *.png *.gif *.bmp *.dib *.webp *.ppm);;Archivos JPG (*.jpg *.jpeg *.jpe);;Archivos TIF (*.tif *.tiff);;Archivos PNG (*.png);;Archivos WEBP (*.webp);;Archivos GIF (*.gif);;Archivos BMP (*.bmp *.dib);;Otros (*.*)";
 
@@ -326,7 +329,7 @@ void MainWindow::on_actionRect_ngulo_triggered()
 void MainWindow::on_toolButton_7_clicked()
 {
     herr_actual = HER_RECTANGULO;
-    ui->toolButton_7->setCheckable(true);
+    ui->toolButton_7->setChecked(true);
 }
 
 
@@ -350,6 +353,19 @@ void MainWindow::on_actionElipse_triggered()
     herr_actual = HER_ELIPSE;
     ui->toolButton_8->setChecked(true);
 }
+
+void MainWindow::on_toolButton_9_clicked()
+{
+    herr_actual=HER_ARCOIRIS;
+}
+
+
+void MainWindow::on_actionArcoiris_triggered()
+{
+    herr_actual=HER_ARCOIRIS;
+    ui->toolButton_9->setChecked(true);
+}
+
 
 
 void MainWindow::on_actionRojo_triggered()
@@ -380,6 +396,44 @@ void MainWindow::on_actionAzul_triggered()
 {
     if(foto_activa() != -1 && primera_libre() != -1){
         ver_histograma(foto_activa(), 0, primera_libre());
+    }
+}
+
+
+void MainWindow::on_actionCopiar_a_nueva_triggered()
+{
+    if (foto_activa() != -1 && primera_libre() != -1)
+        copiar_a_nueva(foto_activa(), primera_libre());
+}
+
+
+
+void MainWindow::on_actionCaptura_de_Camara_triggered()
+{
+    if(primera_libre()!= -1)
+        captura_de_camara(primera_libre());
+}
+
+
+void MainWindow::on_actionAjuste_Lineal_Histograma_triggered()
+{
+    if (foto_activa() != -1){
+        AjusteLineal al(foto_activa(), this);
+        al.exec();
+    }
+
+}
+
+
+void MainWindow::on_actionCaptura_de_video_triggered()
+{
+    if (primera_libre() != -1){
+        QString nombre = QFileDialog::getOpenFileName();
+        if(!nombre.isEmpty()){
+            capturadevideo cv(nombre.toLatin1().data(),this);
+            if (cv.isOpened())
+                cv.exec();
+        }
     }
 }
 

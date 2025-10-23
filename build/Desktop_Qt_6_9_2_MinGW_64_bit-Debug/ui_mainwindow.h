@@ -59,6 +59,11 @@ public:
     QAction *actionVerde;
     QAction *actionAzul;
     QAction *actionGrises;
+    QAction *actionCopiar_a_nueva;
+    QAction *actionCaptura_de_Camara;
+    QAction *actionAjuste_Lineal_Histograma;
+    QAction *actionArcoiris;
+    QAction *actionCaptura_de_video;
     QWidget *centralWidget;
     QToolButton *toolButton;
     QToolButton *toolButton_2;
@@ -73,6 +78,7 @@ public:
     QPushButton *pushButton;
     QToolButton *toolButton_7;
     QToolButton *toolButton_8;
+    QToolButton *toolButton_9;
     QMenuBar *menuBar;
     QMenu *menuArchivo;
     QMenu *menuEdici_n;
@@ -163,6 +169,16 @@ public:
         actionAzul->setObjectName("actionAzul");
         actionGrises = new QAction(MainWindow);
         actionGrises->setObjectName("actionGrises");
+        actionCopiar_a_nueva = new QAction(MainWindow);
+        actionCopiar_a_nueva->setObjectName("actionCopiar_a_nueva");
+        actionCaptura_de_Camara = new QAction(MainWindow);
+        actionCaptura_de_Camara->setObjectName("actionCaptura_de_Camara");
+        actionAjuste_Lineal_Histograma = new QAction(MainWindow);
+        actionAjuste_Lineal_Histograma->setObjectName("actionAjuste_Lineal_Histograma");
+        actionArcoiris = new QAction(MainWindow);
+        actionArcoiris->setObjectName("actionArcoiris");
+        actionCaptura_de_video = new QAction(MainWindow);
+        actionCaptura_de_video->setObjectName("actionCaptura_de_video");
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName("centralWidget");
         toolButton = new QToolButton(centralWidget);
@@ -229,7 +245,7 @@ public:
         toolButton_4->setAutoExclusive(true);
         toolButton_5 = new QToolButton(centralWidget);
         toolButton_5->setObjectName("toolButton_5");
-        toolButton_5->setGeometry(QRect(170, 0, 41, 41));
+        toolButton_5->setGeometry(QRect(210, 0, 41, 41));
         QIcon icon5;
         icon5.addFile(QString::fromUtf8(":/imagenes/linea.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
         toolButton_5->setIcon(icon5);
@@ -238,7 +254,7 @@ public:
         toolButton_5->setAutoExclusive(true);
         toolButton_6 = new QToolButton(centralWidget);
         toolButton_6->setObjectName("toolButton_6");
-        toolButton_6->setGeometry(QRect(290, 0, 41, 41));
+        toolButton_6->setGeometry(QRect(330, 0, 41, 41));
         QIcon icon6;
         icon6.addFile(QString::fromUtf8(":/imagenes/seleccionar.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
         toolButton_6->setIcon(icon6);
@@ -251,7 +267,7 @@ public:
         pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         toolButton_7 = new QToolButton(centralWidget);
         toolButton_7->setObjectName("toolButton_7");
-        toolButton_7->setGeometry(QRect(210, 0, 41, 41));
+        toolButton_7->setGeometry(QRect(250, 0, 41, 41));
         QIcon icon7;
         icon7.addFile(QString::fromUtf8(":/imagenes/rectangulo.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
         toolButton_7->setIcon(icon7);
@@ -259,12 +275,21 @@ public:
         toolButton_7->setAutoExclusive(true);
         toolButton_8 = new QToolButton(centralWidget);
         toolButton_8->setObjectName("toolButton_8");
-        toolButton_8->setGeometry(QRect(250, 0, 41, 41));
+        toolButton_8->setGeometry(QRect(290, 0, 41, 41));
         QIcon icon8;
         icon8.addFile(QString::fromUtf8(":/imagenes/elipse.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
         toolButton_8->setIcon(icon8);
         toolButton_8->setCheckable(true);
         toolButton_8->setAutoExclusive(true);
+        toolButton_9 = new QToolButton(centralWidget);
+        toolButton_9->setObjectName("toolButton_9");
+        toolButton_9->setGeometry(QRect(170, 0, 41, 41));
+        QIcon icon9;
+        icon9.addFile(QString::fromUtf8(":/imagenes/arcoiris.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        toolButton_9->setIcon(icon9);
+        toolButton_9->setIconSize(QSize(32, 32));
+        toolButton_9->setCheckable(true);
+        toolButton_9->setAutoExclusive(true);
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName("menuBar");
@@ -309,6 +334,8 @@ public:
         menuBar->addAction(menuAyuda->menuAction());
         menuArchivo->addAction(actionNueva_imagen);
         menuArchivo->addAction(actionAbrir_imagen);
+        menuArchivo->addAction(actionCaptura_de_Camara);
+        menuArchivo->addAction(actionCaptura_de_video);
         menuArchivo->addSeparator();
         menuArchivo->addAction(actionGuardar);
         menuArchivo->addAction(actionGuardar_como);
@@ -316,6 +343,7 @@ public:
         menuArchivo->addAction(actionCerrar);
         menuArchivo->addAction(actionSalir);
         menuEdici_n->addAction(actionSeleccionar_todo);
+        menuEdici_n->addAction(actionCopiar_a_nueva);
         menuEdici_n->addSeparator();
         menuEdici_n->addAction(menuVer_histograma->menuAction());
         menuEdici_n->addAction(menuOpciones->menuAction());
@@ -326,6 +354,7 @@ public:
         menuVer_histograma->addAction(actionAzul);
         menuVer_histograma->addAction(actionGrises);
         menuHerramientas->addAction(actionPunto);
+        menuHerramientas->addAction(actionArcoiris);
         menuHerramientas->addAction(actionLinea);
         menuHerramientas->addAction(actionRect_ngulo);
         menuHerramientas->addAction(actionElipse);
@@ -334,6 +363,7 @@ public:
         menuTransformar->addAction(actionInvertir);
         menuTransformar->addAction(menuRotar->menuAction());
         menuTransformar->addAction(actionMedia_ponderada);
+        menuTransformar->addAction(actionAjuste_Lineal_Histograma);
         menuRotar->addAction(actionRotar_90);
         menuRotar->addAction(actionRotar_180);
         menuRotar->addAction(actionRotar_91);
@@ -368,7 +398,7 @@ public:
         actionSeleccionar_todo->setText(QCoreApplication::translate("MainWindow", "Seleccionar todo", nullptr));
         actionColor_del_pincel->setText(QCoreApplication::translate("MainWindow", "Color del pincel...", nullptr));
         actionPreguntar_si_guardar->setText(QCoreApplication::translate("MainWindow", "Preguntar si guardar", nullptr));
-        actionBrillo_contraste->setText(QCoreApplication::translate("MainWindow", "Brillo/Contraste...", nullptr));
+        actionBrillo_contraste->setText(QCoreApplication::translate("MainWindow", "Brillo/Contraste/Gama...", nullptr));
         actionInvertir->setText(QCoreApplication::translate("MainWindow", "Invertir", nullptr));
         actionRotar_90->setText(QCoreApplication::translate("MainWindow", "Rotar 90\302\272", nullptr));
         actionRotar_91->setText(QCoreApplication::translate("MainWindow", "Rotar 270\302\272", nullptr));
@@ -387,6 +417,11 @@ public:
         actionVerde->setText(QCoreApplication::translate("MainWindow", "Verde", nullptr));
         actionAzul->setText(QCoreApplication::translate("MainWindow", "Azul", nullptr));
         actionGrises->setText(QCoreApplication::translate("MainWindow", "Grises", nullptr));
+        actionCopiar_a_nueva->setText(QCoreApplication::translate("MainWindow", "Copiar a nueva", nullptr));
+        actionCaptura_de_Camara->setText(QCoreApplication::translate("MainWindow", "Captura de Camara", nullptr));
+        actionAjuste_Lineal_Histograma->setText(QCoreApplication::translate("MainWindow", "Ajuste Lineal Histograma...", nullptr));
+        actionArcoiris->setText(QCoreApplication::translate("MainWindow", "Arcoiris", nullptr));
+        actionCaptura_de_video->setText(QCoreApplication::translate("MainWindow", "Captura de video...", nullptr));
         toolButton->setText(QCoreApplication::translate("MainWindow", "...", nullptr));
         toolButton_2->setText(QCoreApplication::translate("MainWindow", "...", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -406,6 +441,7 @@ public:
         pushButton->setText(QString());
         toolButton_7->setText(QCoreApplication::translate("MainWindow", "...", nullptr));
         toolButton_8->setText(QString());
+        toolButton_9->setText(QCoreApplication::translate("MainWindow", "Arcoiris", nullptr));
         menuArchivo->setTitle(QCoreApplication::translate("MainWindow", "Archivo", nullptr));
         menuEdici_n->setTitle(QCoreApplication::translate("MainWindow", "Edici\303\263n", nullptr));
         menuOpciones->setTitle(QCoreApplication::translate("MainWindow", "Opciones", nullptr));
