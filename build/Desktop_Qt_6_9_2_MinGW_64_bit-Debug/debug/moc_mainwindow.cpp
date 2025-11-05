@@ -87,7 +87,8 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         "on_actionAjuste_Lineal_Histograma_triggered",
         "on_toolButton_9_clicked",
         "on_actionArcoiris_triggered",
-        "on_actionCaptura_de_video_triggered"
+        "on_actionCaptura_de_video_triggered",
+        "on_actionBajo_relieve_triggered"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -189,6 +190,8 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         QtMocHelpers::SlotData<void()>(48, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_actionCaptura_de_video_triggered'
         QtMocHelpers::SlotData<void()>(49, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_actionBajo_relieve_triggered'
+        QtMocHelpers::SlotData<void()>(50, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -259,6 +262,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 44: _t->on_toolButton_9_clicked(); break;
         case 45: _t->on_actionArcoiris_triggered(); break;
         case 46: _t->on_actionCaptura_de_video_triggered(); break;
+        case 47: _t->on_actionBajo_relieve_triggered(); break;
         default: ;
         }
     }
@@ -283,14 +287,14 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 47)
+        if (_id < 48)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 47;
+        _id -= 48;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 47)
+        if (_id < 48)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 47;
+        _id -= 48;
     }
     return _id;
 }

@@ -1,5 +1,6 @@
 debug/main.o
 debug/ajustelineal.o
+debug/bajorelieve.o
 debug/capturadevideo.o
 debug/mainwindow.o
 debug/imagenes.o
@@ -14,6 +15,7 @@ debug/mediadevideo.o
 debug/qrc_recursos.o
 debug/moc_mainwindow.o
 debug/moc_ajustelineal.o
+debug/moc_bajorelieve.o
 debug/moc_capturadevideo.o
 debug/moc_dialognueva.o
 debug/moc_brillocontraste.o

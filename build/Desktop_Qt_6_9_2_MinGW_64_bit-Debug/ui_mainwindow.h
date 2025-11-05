@@ -64,6 +64,7 @@ public:
     QAction *actionAjuste_Lineal_Histograma;
     QAction *actionArcoiris;
     QAction *actionCaptura_de_video;
+    QAction *actionBajo_relieve;
     QWidget *centralWidget;
     QToolButton *toolButton;
     QToolButton *toolButton_2;
@@ -179,6 +180,8 @@ public:
         actionArcoiris->setObjectName("actionArcoiris");
         actionCaptura_de_video = new QAction(MainWindow);
         actionCaptura_de_video->setObjectName("actionCaptura_de_video");
+        actionBajo_relieve = new QAction(MainWindow);
+        actionBajo_relieve->setObjectName("actionBajo_relieve");
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName("centralWidget");
         toolButton = new QToolButton(centralWidget);
@@ -368,6 +371,8 @@ public:
         menuRotar->addAction(actionRotar_180);
         menuRotar->addAction(actionRotar_91);
         menuEfectos->addAction(menuSuavizado->menuAction());
+        menuEfectos->addSeparator();
+        menuEfectos->addAction(actionBajo_relieve);
         menuSuavizado->addAction(actionGausiano);
         menuSuavizado->addAction(actionMedia);
         menuSuavizado->addAction(actionMediana);
@@ -418,10 +423,11 @@ public:
         actionAzul->setText(QCoreApplication::translate("MainWindow", "Azul", nullptr));
         actionGrises->setText(QCoreApplication::translate("MainWindow", "Grises", nullptr));
         actionCopiar_a_nueva->setText(QCoreApplication::translate("MainWindow", "Copiar a nueva", nullptr));
-        actionCaptura_de_Camara->setText(QCoreApplication::translate("MainWindow", "Captura de Camara", nullptr));
+        actionCaptura_de_Camara->setText(QCoreApplication::translate("MainWindow", "Captura de c\303\241mara...", nullptr));
         actionAjuste_Lineal_Histograma->setText(QCoreApplication::translate("MainWindow", "Ajuste Lineal Histograma...", nullptr));
-        actionArcoiris->setText(QCoreApplication::translate("MainWindow", "Arcoiris", nullptr));
+        actionArcoiris->setText(QCoreApplication::translate("MainWindow", "Arco\303\255ris", nullptr));
         actionCaptura_de_video->setText(QCoreApplication::translate("MainWindow", "Captura de video...", nullptr));
+        actionBajo_relieve->setText(QCoreApplication::translate("MainWindow", "Bajo relieve...", nullptr));
         toolButton->setText(QCoreApplication::translate("MainWindow", "...", nullptr));
         toolButton_2->setText(QCoreApplication::translate("MainWindow", "...", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"

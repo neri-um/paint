@@ -754,6 +754,42 @@ void ver_histograma (int nfoto, int ncanal, int nres)
 
 //---------------------------------------------------------------------------
 
+void ver_bajorrelieve (int nfoto, int nres, double angulo, double grado, int ntextura,
+                      int tamSobel, bool guardar)
+{
+    QString nombres[4]={":/imagenes/arena.jpg",
+                        ":/imagenes/cielo.jpg",
+                        ":/imagenes/gris.png",
+                        ":/imagenes/madera.jpg"};
+    QImage imq= QImage(nombres[ntextura]);
+    Mat fondo(imq.height(),imq.width(),CV_8UC4,imq.scanLine(0));
+    cvtColor(fondo, fondo, COLOR_RGBA2RGB);
+    grado=grado/pow(4, (tamSobel-3));
+    Mat gris;
+    cvtColor(foto[nfoto].img, gris, COLOR_BGR2GRAY);
+    Mat rotada;
+    rotar_angulo(gris, rotada, angulo, 1, 1);
+    Mat sobel;
+    Sobel(rotada, sobel, -1, 1, 0, tamSobel, grado, 128);
+    rotar_angulo(sobel, rotada, -angulo, 1 , 0);
+    int w=gris.cols;
+    int h=gris.rows;
+    int w2=rotada.cols;
+    int h2=rotada.rows;
+    Rect roi((w2-w)/2, (h2-h)/2, w, h);
+    gris=rotada(roi);
+    resize(fondo, fondo, gris.size());
+    cvtColor(gris,gris, COLOR_GRAY2BGR);
+    Mat res;
+    addWeighted(gris, 1, fondo, 1, -128, res);
+    imshow("Efecto de bajo relieve", res);
+    if(guardar)
+        crear_nueva(nres, res);
+}
+
+
+//---------------------------------------------------------------------------
+
 string Lt1(string cadena)
 {
     QString temp= QString::fromUtf8(cadena.c_str());
@@ -768,3 +804,4 @@ void copiar_a_nueva (int nfoto, int nres)
     Mat img= foto[nfoto].img(foto[nfoto].roi).clone();
     crear_nueva(nres,img);
 }
+

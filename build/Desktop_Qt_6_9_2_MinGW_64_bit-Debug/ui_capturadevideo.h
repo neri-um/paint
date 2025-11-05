@@ -33,10 +33,10 @@ public:
         if (capturadevideo->objectName().isEmpty())
             capturadevideo->setObjectName("capturadevideo");
         capturadevideo->setWindowModality(Qt::WindowModality::WindowModal);
-        capturadevideo->resize(408, 141);
+        capturadevideo->resize(408, 119);
         buttonBox = new QDialogButtonBox(capturadevideo);
         buttonBox->setObjectName("buttonBox");
-        buttonBox->setGeometry(QRect(-70, 80, 341, 32));
+        buttonBox->setGeometry(QRect(-60, 70, 341, 32));
         buttonBox->setOrientation(Qt::Orientation::Horizontal);
         buttonBox->setStandardButtons(QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok);
         horizontalSlider = new QSlider(capturadevideo);
@@ -70,7 +70,7 @@ public:
     void retranslateUi(QDialog *capturadevideo)
     {
         capturadevideo->setWindowTitle(QCoreApplication::translate("capturadevideo", "Capturadevideo", nullptr));
-        label->setText(QCoreApplication::translate("capturadevideo", "Brillo", nullptr));
+        label->setText(QCoreApplication::translate("capturadevideo", "Frames del v\303\255deo", nullptr));
     } // retranslateUi
 
 };

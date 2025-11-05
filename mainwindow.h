@@ -73,6 +73,7 @@ private slots:
     void on_toolButton_9_clicked();
     void on_actionArcoiris_triggered();
     void on_actionCaptura_de_video_triggered();
+    void on_actionBajo_relieve_triggered();
 };
 
 extern MainWindow *w;

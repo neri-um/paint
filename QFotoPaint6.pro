@@ -16,6 +16,7 @@ CONFIG += c++17
 
 SOURCES += main.cpp\
     ajustelineal.cpp \
+    bajorelieve.cpp \
     capturadevideo.cpp \
     mainwindow.cpp \
     imagenes.cpp \
@@ -30,6 +31,7 @@ SOURCES += main.cpp\
 
 HEADERS  += mainwindow.h \
     ajustelineal.h \
+    bajorelieve.h \
     capturadevideo.h \
     imagenes.h \
     dialognueva.h \
@@ -43,6 +45,7 @@ HEADERS  += mainwindow.h \
 
 FORMS    += mainwindow.ui \
     ajustelineal.ui \
+    bajorelieve.ui \
     capturadevideo.ui \
     dialognueva.ui \
     brillocontraste.ui \

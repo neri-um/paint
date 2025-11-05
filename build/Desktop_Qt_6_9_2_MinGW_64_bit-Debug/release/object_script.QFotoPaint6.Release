@@ -1,5 +1,6 @@
 release/main.o
 release/ajustelineal.o
+release/bajorelieve.o
 release/capturadevideo.o
 release/mainwindow.o
 release/imagenes.o
@@ -14,6 +15,7 @@ release/mediadevideo.o
 release/qrc_recursos.o
 release/moc_mainwindow.o
 release/moc_ajustelineal.o
+release/moc_bajorelieve.o
 release/moc_capturadevideo.o
 release/moc_dialognueva.o
 release/moc_brillocontraste.o

@@ -32,6 +32,14 @@ public:
     QCheckBox *checkBox;
     QSpinBox *spinBox;
     QLabel *label_2;
+    QLabel *label_3;
+    QSpinBox *spinBox_3;
+    QSpinBox *spinBox_4;
+    QSlider *horizontalSlider_3;
+    QSlider *horizontalSlider_4;
+    QCheckBox *checkBox_2;
+    QDialogButtonBox *buttonBox_2;
+    QLabel *label_4;
 
     void setupUi(QDialog *AjusteLineal)
     {
@@ -91,6 +99,58 @@ public:
         label_2->setStyleSheet(QString::fromUtf8("background-color: rgb(128, 128, 128);\n"
 "color: rgb(255, 255, 255);"));
         label_2->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        label_3 = new QLabel(AjusteLineal);
+        label_3->setObjectName("label_3");
+        label_3->setGeometry(QRect(0, 0, 271, 16));
+        label_3->setStyleSheet(QString::fromUtf8("background-color: rgb(128, 128, 128);\n"
+"color: rgb(255, 255, 255);"));
+        label_3->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        spinBox_3 = new QSpinBox(AjusteLineal);
+        spinBox_3->setObjectName("spinBox_3");
+        spinBox_3->setGeometry(QRect(280, 0, 81, 22));
+        spinBox_3->setMinimum(0);
+        spinBox_3->setMaximum(100);
+        spinBox_3->setValue(5);
+        spinBox_4 = new QSpinBox(AjusteLineal);
+        spinBox_4->setObjectName("spinBox_4");
+        spinBox_4->setGeometry(QRect(280, 50, 81, 22));
+        spinBox_4->setMinimum(0);
+        spinBox_4->setMaximum(100);
+        spinBox_4->setValue(5);
+        horizontalSlider_3 = new QSlider(AjusteLineal);
+        horizontalSlider_3->setObjectName("horizontalSlider_3");
+        horizontalSlider_3->setGeometry(QRect(0, 70, 271, 21));
+        horizontalSlider_3->setMinimum(0);
+        horizontalSlider_3->setMaximum(100);
+        horizontalSlider_3->setValue(5);
+        horizontalSlider_3->setOrientation(Qt::Orientation::Horizontal);
+        horizontalSlider_3->setTickPosition(QSlider::TickPosition::TicksBelow);
+        horizontalSlider_3->setTickInterval(10);
+        horizontalSlider_4 = new QSlider(AjusteLineal);
+        horizontalSlider_4->setObjectName("horizontalSlider_4");
+        horizontalSlider_4->setGeometry(QRect(0, 20, 271, 21));
+        horizontalSlider_4->setMinimum(0);
+        horizontalSlider_4->setMaximum(100);
+        horizontalSlider_4->setPageStep(16);
+        horizontalSlider_4->setValue(5);
+        horizontalSlider_4->setOrientation(Qt::Orientation::Horizontal);
+        horizontalSlider_4->setTickPosition(QSlider::TickPosition::TicksBelow);
+        horizontalSlider_4->setTickInterval(32);
+        checkBox_2 = new QCheckBox(AjusteLineal);
+        checkBox_2->setObjectName("checkBox_2");
+        checkBox_2->setGeometry(QRect(180, 108, 101, 17));
+        checkBox_2->setChecked(true);
+        buttonBox_2 = new QDialogButtonBox(AjusteLineal);
+        buttonBox_2->setObjectName("buttonBox_2");
+        buttonBox_2->setGeometry(QRect(0, 100, 161, 32));
+        buttonBox_2->setOrientation(Qt::Orientation::Horizontal);
+        buttonBox_2->setStandardButtons(QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok);
+        label_4 = new QLabel(AjusteLineal);
+        label_4->setObjectName("label_4");
+        label_4->setGeometry(QRect(0, 50, 271, 16));
+        label_4->setStyleSheet(QString::fromUtf8("background-color: rgb(128, 128, 128);\n"
+"color: rgb(255, 255, 255);"));
+        label_4->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         retranslateUi(AjusteLineal);
         QObject::connect(buttonBox, &QDialogButtonBox::accepted, AjusteLineal, qOverload<>(&QDialog::accept));
@@ -105,6 +165,9 @@ public:
         label->setText(QCoreApplication::translate("AjusteLineal", "Percentil Minimo", nullptr));
         checkBox->setText(QCoreApplication::translate("AjusteLineal", "Previsualizar", nullptr));
         label_2->setText(QCoreApplication::translate("AjusteLineal", "Percentil M\303\241ximo", nullptr));
+        label_3->setText(QCoreApplication::translate("AjusteLineal", "Percentil Minimo", nullptr));
+        checkBox_2->setText(QCoreApplication::translate("AjusteLineal", "Previsualizar", nullptr));
+        label_4->setText(QCoreApplication::translate("AjusteLineal", "Percentil M\303\241ximo", nullptr));
     } // retranslateUi
 
 };

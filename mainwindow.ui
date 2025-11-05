@@ -484,6 +484,8 @@ p, li { white-space: pre-wrap; }
      <addaction name="actionMediana"/>
     </widget>
     <addaction name="menuSuavizado"/>
+    <addaction name="separator"/>
+    <addaction name="actionBajo_relieve"/>
    </widget>
    <widget class="QMenu" name="menuV_deo">
     <property name="title">
@@ -704,6 +706,11 @@ p, li { white-space: pre-wrap; }
   <action name="actionCaptura_de_video">
    <property name="text">
     <string>Captura de video...</string>
+   </property>
+  </action>
+  <action name="actionBajo_relieve">
+   <property name="text">
+    <string>Bajo relieve...</string>
    </property>
   </action>
  </widget>
