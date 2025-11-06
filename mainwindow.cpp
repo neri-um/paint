@@ -447,3 +447,11 @@ void MainWindow::on_actionBajo_relieve_triggered()
     }
 }
 
+
+void MainWindow::on_actionEscala_de_color_triggered()
+{
+        if (foto_activa() != -1 && primera_libre()!= -1){
+            escala_color(foto_activa(), primera_libre());
+        }
+}
+

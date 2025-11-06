@@ -662,7 +662,34 @@ void ver_suavizado (int nfoto, int ntipo, int tamx, int tamy, bool guardar)
 
 //---------------------------------------------------------------------------
 
+void escala_color (int nfoto, int nres)
+{
+    Mat gris;
+    cvtColor(foto[nfoto].img, gris, COLOR_BGR2GRAY);
+    cvtColor(gris, gris, COLOR_GRAY2BGR);
+    Mat lut(256, 1, CV_8UC3);
+    int vb = color_pincel.val[0];
+    int vg = color_pincel.val[1];
+    int vr = color_pincel.val[2];
+    int vgris = (vr+vb+vg)/3;
+    for (int A=0; A<256; A++){
+        if(A<128){
+            lut.at<Vec3b>(A)= Vec3b(vb*A/vgris,
+                                    vg*A/vgris,
+                                    vr*A/vgris);
+        } else {
+            lut.at<Vec3b>(A)= Vec3b(vb+(255-vb)*(A-128)/128,
+                                    vg+(255-vg)*(A-128)/128,
+                                    vr+(255-vr)*(A-128)/128);
+        }
+    }
+    Mat res;
+    LUT(gris, lut, res);
+    crear_nueva(nres, res);
 
+}
+
+//---------------------------------------------------------------------------
 
 void media_ponderada (int nf1, int nf2, int nueva, double peso)
 {

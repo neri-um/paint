@@ -470,6 +470,7 @@ p, li { white-space: pre-wrap; }
     <addaction name="menuRotar"/>
     <addaction name="actionMedia_ponderada"/>
     <addaction name="actionAjuste_Lineal_Histograma"/>
+    <addaction name="actionEscala_de_color"/>
    </widget>
    <widget class="QMenu" name="menuEfectos">
     <property name="title">
@@ -711,6 +712,11 @@ p, li { white-space: pre-wrap; }
   <action name="actionBajo_relieve">
    <property name="text">
     <string>Bajo relieve...</string>
+   </property>
+  </action>
+  <action name="actionEscala_de_color">
+   <property name="text">
+    <string>Escala de color</string>
    </property>
   </action>
  </widget>

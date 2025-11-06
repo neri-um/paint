@@ -65,6 +65,7 @@ public:
     QAction *actionArcoiris;
     QAction *actionCaptura_de_video;
     QAction *actionBajo_relieve;
+    QAction *actionEscala_de_color;
     QWidget *centralWidget;
     QToolButton *toolButton;
     QToolButton *toolButton_2;
@@ -182,6 +183,8 @@ public:
         actionCaptura_de_video->setObjectName("actionCaptura_de_video");
         actionBajo_relieve = new QAction(MainWindow);
         actionBajo_relieve->setObjectName("actionBajo_relieve");
+        actionEscala_de_color = new QAction(MainWindow);
+        actionEscala_de_color->setObjectName("actionEscala_de_color");
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName("centralWidget");
         toolButton = new QToolButton(centralWidget);
@@ -367,6 +370,7 @@ public:
         menuTransformar->addAction(menuRotar->menuAction());
         menuTransformar->addAction(actionMedia_ponderada);
         menuTransformar->addAction(actionAjuste_Lineal_Histograma);
+        menuTransformar->addAction(actionEscala_de_color);
         menuRotar->addAction(actionRotar_90);
         menuRotar->addAction(actionRotar_180);
         menuRotar->addAction(actionRotar_91);
@@ -428,6 +432,7 @@ public:
         actionArcoiris->setText(QCoreApplication::translate("MainWindow", "Arco\303\255ris", nullptr));
         actionCaptura_de_video->setText(QCoreApplication::translate("MainWindow", "Captura de video...", nullptr));
         actionBajo_relieve->setText(QCoreApplication::translate("MainWindow", "Bajo relieve...", nullptr));
+        actionEscala_de_color->setText(QCoreApplication::translate("MainWindow", "Escala de color", nullptr));
         toolButton->setText(QCoreApplication::translate("MainWindow", "...", nullptr));
         toolButton_2->setText(QCoreApplication::translate("MainWindow", "...", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
