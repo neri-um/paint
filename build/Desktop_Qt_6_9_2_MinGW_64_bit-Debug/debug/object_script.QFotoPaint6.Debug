@@ -6,6 +6,7 @@ debug/mainwindow.o
 debug/imagenes.o
 debug/dialognueva.o
 debug/brillocontraste.o
+debug/pincharestirar.o
 debug/suavizados.o
 debug/video.o
 debug/rotaravideo.o
@@ -19,6 +20,7 @@ debug/moc_bajorelieve.o
 debug/moc_capturadevideo.o
 debug/moc_dialognueva.o
 debug/moc_brillocontraste.o
+debug/moc_pincharestirar.o
 debug/moc_suavizados.o
 debug/moc_rotaravideo.o
 debug/moc_mediaponderada.o

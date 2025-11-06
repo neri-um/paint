@@ -66,6 +66,7 @@ public:
     QAction *actionCaptura_de_video;
     QAction *actionBajo_relieve;
     QAction *actionEscala_de_color;
+    QAction *actionPinchar_estirar;
     QWidget *centralWidget;
     QToolButton *toolButton;
     QToolButton *toolButton_2;
@@ -185,6 +186,8 @@ public:
         actionBajo_relieve->setObjectName("actionBajo_relieve");
         actionEscala_de_color = new QAction(MainWindow);
         actionEscala_de_color->setObjectName("actionEscala_de_color");
+        actionPinchar_estirar = new QAction(MainWindow);
+        actionPinchar_estirar->setObjectName("actionPinchar_estirar");
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName("centralWidget");
         toolButton = new QToolButton(centralWidget);
@@ -377,6 +380,8 @@ public:
         menuEfectos->addAction(menuSuavizado->menuAction());
         menuEfectos->addSeparator();
         menuEfectos->addAction(actionBajo_relieve);
+        menuEfectos->addSeparator();
+        menuEfectos->addAction(actionPinchar_estirar);
         menuSuavizado->addAction(actionGausiano);
         menuSuavizado->addAction(actionMedia);
         menuSuavizado->addAction(actionMediana);
@@ -433,6 +438,7 @@ public:
         actionCaptura_de_video->setText(QCoreApplication::translate("MainWindow", "Captura de video...", nullptr));
         actionBajo_relieve->setText(QCoreApplication::translate("MainWindow", "Bajo relieve...", nullptr));
         actionEscala_de_color->setText(QCoreApplication::translate("MainWindow", "Escala de color", nullptr));
+        actionPinchar_estirar->setText(QCoreApplication::translate("MainWindow", "Pinchar/estirar", nullptr));
         toolButton->setText(QCoreApplication::translate("MainWindow", "...", nullptr));
         toolButton_2->setText(QCoreApplication::translate("MainWindow", "...", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"

@@ -166,6 +166,9 @@ void ver_suavizado (int nfoto, int ntipo, int tamx, int tamy,
 void escala_color (int nfoto, int nres);
 // Convertir la imagen de entrada a escala de color del pincel
 
+void ver_pinchar_estirar (int nfoto, int nres, int cx, int cy, double grado, double radio, bool guardar = false);
+// Efecto de pinchar/estirar
+
 void ver_bajorrelieve (int nfoto, int nres, double angulo, double grado, int ntextura, int tamSobel,
                       bool guardar= false);
 // Efecto de bajo relieve

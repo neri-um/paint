@@ -487,6 +487,8 @@ p, li { white-space: pre-wrap; }
     <addaction name="menuSuavizado"/>
     <addaction name="separator"/>
     <addaction name="actionBajo_relieve"/>
+    <addaction name="separator"/>
+    <addaction name="actionPinchar_estirar"/>
    </widget>
    <widget class="QMenu" name="menuV_deo">
     <property name="title">
@@ -717,6 +719,11 @@ p, li { white-space: pre-wrap; }
   <action name="actionEscala_de_color">
    <property name="text">
     <string>Escala de color</string>
+   </property>
+  </action>
+  <action name="actionPinchar_estirar">
+   <property name="text">
+    <string>Pinchar/estirar</string>
    </property>
   </action>
  </widget>
