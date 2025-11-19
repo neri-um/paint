@@ -67,6 +67,7 @@ public:
     QAction *actionBajo_relieve;
     QAction *actionEscala_de_color;
     QAction *actionPinchar_estirar;
+    QAction *actionStar_Wars;
     QWidget *centralWidget;
     QToolButton *toolButton;
     QToolButton *toolButton_2;
@@ -188,6 +189,8 @@ public:
         actionEscala_de_color->setObjectName("actionEscala_de_color");
         actionPinchar_estirar = new QAction(MainWindow);
         actionPinchar_estirar->setObjectName("actionPinchar_estirar");
+        actionStar_Wars = new QAction(MainWindow);
+        actionStar_Wars->setObjectName("actionStar_Wars");
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName("centralWidget");
         toolButton = new QToolButton(centralWidget);
@@ -302,7 +305,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName("menuBar");
-        menuBar->setGeometry(QRect(0, 0, 600, 25));
+        menuBar->setGeometry(QRect(0, 0, 600, 26));
         menuArchivo = new QMenu(menuBar);
         menuArchivo->setObjectName("menuArchivo");
         menuEdici_n = new QMenu(menuBar);
@@ -389,6 +392,7 @@ public:
         menuV_deo->addAction(menuV_deo_a_imagen->menuAction());
         menuV_deo->addAction(actionV_deo_a_video);
         menuImagen_a_v_deo->addAction(actionRotar_imagen);
+        menuImagen_a_v_deo->addAction(actionStar_Wars);
         menuV_deo_a_imagen->addAction(actionImagen_media);
         menuAyuda->addAction(actionAcerca_de);
 
@@ -439,6 +443,7 @@ public:
         actionBajo_relieve->setText(QCoreApplication::translate("MainWindow", "Bajo relieve...", nullptr));
         actionEscala_de_color->setText(QCoreApplication::translate("MainWindow", "Escala de color", nullptr));
         actionPinchar_estirar->setText(QCoreApplication::translate("MainWindow", "Pinchar/estirar", nullptr));
+        actionStar_Wars->setText(QCoreApplication::translate("MainWindow", "Star Wars...", nullptr));
         toolButton->setText(QCoreApplication::translate("MainWindow", "...", nullptr));
         toolButton_2->setText(QCoreApplication::translate("MainWindow", "...", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"

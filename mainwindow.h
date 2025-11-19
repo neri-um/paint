@@ -76,6 +76,7 @@ private slots:
     void on_actionBajo_relieve_triggered();
     void on_actionEscala_de_color_triggered();
     void on_actionPinchar_estirar_triggered();
+    void on_actionStar_Wars_triggered();
 };
 
 extern MainWindow *w;

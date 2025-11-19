@@ -32,6 +32,9 @@ void media_a_nueva (int nfoto);
 void mostrar_camara (void);
 // Captura una imagen de la cámara y la muestra en la ventana correspondiente
 
+void star_wars (int nfoto, string nombre, int nframes, double fps, int codec, vector<string> texto, Scalar color, double escala,
+               bool guardar=false);
+
 void captura_de_camara (int nres);
 //Captura imagen de la cámara
 
