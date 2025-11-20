@@ -68,6 +68,7 @@ public:
     QAction *actionEscala_de_color;
     QAction *actionPinchar_estirar;
     QAction *actionStar_Wars;
+    QAction *actionMatiz_Saturaci_n_Luminosidad;
     QWidget *centralWidget;
     QToolButton *toolButton;
     QToolButton *toolButton_2;
@@ -191,6 +192,8 @@ public:
         actionPinchar_estirar->setObjectName("actionPinchar_estirar");
         actionStar_Wars = new QAction(MainWindow);
         actionStar_Wars->setObjectName("actionStar_Wars");
+        actionMatiz_Saturaci_n_Luminosidad = new QAction(MainWindow);
+        actionMatiz_Saturaci_n_Luminosidad->setObjectName("actionMatiz_Saturaci_n_Luminosidad");
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName("centralWidget");
         toolButton = new QToolButton(centralWidget);
@@ -372,6 +375,7 @@ public:
         menuHerramientas->addAction(actionElipse);
         menuHerramientas->addAction(actionSeleccionar);
         menuTransformar->addAction(actionBrillo_contraste);
+        menuTransformar->addAction(actionMatiz_Saturaci_n_Luminosidad);
         menuTransformar->addAction(actionInvertir);
         menuTransformar->addAction(menuRotar->menuAction());
         menuTransformar->addAction(actionMedia_ponderada);
@@ -444,6 +448,7 @@ public:
         actionEscala_de_color->setText(QCoreApplication::translate("MainWindow", "Escala de color", nullptr));
         actionPinchar_estirar->setText(QCoreApplication::translate("MainWindow", "Pinchar/estirar", nullptr));
         actionStar_Wars->setText(QCoreApplication::translate("MainWindow", "Star Wars...", nullptr));
+        actionMatiz_Saturaci_n_Luminosidad->setText(QCoreApplication::translate("MainWindow", "Matiz/Saturaci\303\263n/Luminosidad...", nullptr));
         toolButton->setText(QCoreApplication::translate("MainWindow", "...", nullptr));
         toolButton_2->setText(QCoreApplication::translate("MainWindow", "...", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"

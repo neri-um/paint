@@ -151,7 +151,11 @@ void ver_brillo_contraste (int nfoto, double suma, double prod,
 // A(x,y)*prod + suma. Si guardar==true se guarda la imagen, y en otro caso
 // solo se visualiza el resultado, pero sin guardar
 
+
+void ver_matsatlum (int nfoto, int matiz, double saturacion, double luminosidad, bool guardar = false);
+
 void ver_brillo_contraste_gama (int nfoto, double suma, double prod, double gama, bool guardar);
+//ajuste de matiz saturación/luminosidad
 
 void ajuste_lineal_hist(int nfoto, double pmin, double pmax, bool guardar = false);
 //Operación ajuste lineal del histograma

@@ -735,6 +735,31 @@ void media_ponderada (int nf1, int nf2, int nueva, double peso)
     addWeighted(img, peso, cop, 1.0-peso, 0, img);
     crear_nueva(nueva, img);
 }
+//---------------------------------------------------------------------------
+
+
+void ver_matsatlum (int nfoto, int matiz, double saturacion, double luminosidad, bool guardar){
+
+    Mat hls;
+    cvtColor(foto[nfoto].img, hls, COLOR_BGR2HLS_FULL);
+    Mat canales[3];
+    split(hls,canales);
+    Mat h16;
+    canales[0].convertTo(h16, CV_16S,1,matiz);
+    bitwise_and(h16, 255, h16);
+    h16.convertTo(canales[0], CV_8U);
+    canales[1]+=luminosidad;
+    canales[2]+=saturacion;
+    merge(canales,3,hls);
+    Mat res;
+    cvtColor(hls,res,COLOR_HLS2BGR_FULL);
+    imshow(foto[nfoto].nombre, res);
+    if(guardar){
+        res.copyTo(foto[nfoto].img);
+        foto[nfoto].modificada= true;
+    }
+
+}
 
 //---------------------------------------------------------------------------
 
