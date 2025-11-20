@@ -84,3 +84,9 @@ void Inpaint::on_checkBox_stateChanged(int arg1)
     in_previs = 1;
 }
 
+
+void Inpaint::on_horizontalSlider_valueChanged(int value)
+{
+    in_radio_pincel= value;
+}
+
