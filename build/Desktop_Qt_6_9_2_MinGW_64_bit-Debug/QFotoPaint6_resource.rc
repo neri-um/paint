@@ -1,6 +1,6 @@
 #include <windows.h>
 
-IDI_ICON1	ICON	"C:\\Users\\Juanillo-PC\\Desktop\\ProyectosQt\\paint\\imagenes\\icono.ico"
+IDI_ICON1	ICON	"C:\\Users\\neriu\\Documents\\InfGraf\\paint\\paint\\imagenes\\icono.ico"
 
 VS_VERSION_INFO VERSIONINFO
 	FILEVERSION 0,0,0,0

@@ -62,13 +62,13 @@ public:
         spinBox->setValue(5);
         label_3 = new QLabel(AjusteLineal);
         label_3->setObjectName("label_3");
-        label_3->setGeometry(QRect(0, 0, 271, 16));
+        label_3->setGeometry(QRect(10, 20, 271, 16));
         label_3->setStyleSheet(QString::fromUtf8("background-color: rgb(128, 128, 128);\n"
 "color: rgb(255, 255, 255);"));
         label_3->setAlignment(Qt::AlignmentFlag::AlignCenter);
         horizontalSlider_3 = new QSlider(AjusteLineal);
         horizontalSlider_3->setObjectName("horizontalSlider_3");
-        horizontalSlider_3->setGeometry(QRect(0, 70, 271, 21));
+        horizontalSlider_3->setGeometry(QRect(10, 90, 271, 21));
         horizontalSlider_3->setMinimum(0);
         horizontalSlider_3->setMaximum(100);
         horizontalSlider_3->setValue(5);
@@ -77,7 +77,7 @@ public:
         horizontalSlider_3->setTickInterval(10);
         horizontalSlider_4 = new QSlider(AjusteLineal);
         horizontalSlider_4->setObjectName("horizontalSlider_4");
-        horizontalSlider_4->setGeometry(QRect(0, 20, 271, 21));
+        horizontalSlider_4->setGeometry(QRect(10, 40, 271, 21));
         horizontalSlider_4->setMinimum(0);
         horizontalSlider_4->setMaximum(100);
         horizontalSlider_4->setPageStep(16);
@@ -87,7 +87,7 @@ public:
         horizontalSlider_4->setTickInterval(32);
         label_4 = new QLabel(AjusteLineal);
         label_4->setObjectName("label_4");
-        label_4->setGeometry(QRect(0, 50, 271, 16));
+        label_4->setGeometry(QRect(10, 70, 271, 16));
         label_4->setStyleSheet(QString::fromUtf8("background-color: rgb(128, 128, 128);\n"
 "color: rgb(255, 255, 255);"));
         label_4->setAlignment(Qt::AlignmentFlag::AlignCenter);

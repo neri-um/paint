@@ -398,7 +398,7 @@ p, li { white-space: pre-wrap; }
      <x>0</x>
      <y>0</y>
      <width>600</width>
-     <height>26</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuArchivo">
@@ -487,6 +487,7 @@ p, li { white-space: pre-wrap; }
     </widget>
     <addaction name="menuSuavizado"/>
     <addaction name="separator"/>
+    <addaction name="actionInPaint"/>
     <addaction name="actionBajo_relieve"/>
     <addaction name="separator"/>
     <addaction name="actionPinchar_estirar"/>
@@ -736,6 +737,11 @@ p, li { white-space: pre-wrap; }
   <action name="actionMatiz_Saturaci_n_Luminosidad">
    <property name="text">
     <string>Matiz/Saturación/Luminosidad...</string>
+   </property>
+  </action>
+  <action name="actionInPaint">
+   <property name="text">
+    <string>InPaint</string>
    </property>
   </action>
  </widget>

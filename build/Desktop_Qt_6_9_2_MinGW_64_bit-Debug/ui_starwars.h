@@ -46,7 +46,7 @@ public:
         if (StarWars->objectName().isEmpty())
             StarWars->setObjectName("StarWars");
         StarWars->setWindowModality(Qt::WindowModality::WindowModal);
-        StarWars->resize(400, 300);
+        StarWars->resize(400, 291);
         buttonBox = new QDialogButtonBox(StarWars);
         buttonBox->setObjectName("buttonBox");
         buttonBox->setGeometry(QRect(40, 240, 191, 32));
@@ -60,7 +60,7 @@ public:
         spinBox->setValue(1000);
         doubleSpinBox = new QDoubleSpinBox(StarWars);
         doubleSpinBox->setObjectName("doubleSpinBox");
-        doubleSpinBox->setGeometry(QRect(280, 100, 121, 22));
+        doubleSpinBox->setGeometry(QRect(270, 80, 121, 22));
         doubleSpinBox->setDecimals(1);
         doubleSpinBox->setMaximum(200.000000000000000);
         doubleSpinBox->setValue(30.000000000000000);
@@ -72,11 +72,11 @@ public:
         comboBox->addItem(QString());
         comboBox->addItem(QString());
         comboBox->setObjectName("comboBox");
-        comboBox->setGeometry(QRect(280, 50, 121, 21));
+        comboBox->setGeometry(QRect(270, 30, 121, 21));
         comboBox->setEditable(true);
         label_4 = new QLabel(StarWars);
         label_4->setObjectName("label_4");
-        label_4->setGeometry(QRect(0, 10, 221, 20));
+        label_4->setGeometry(QRect(30, 10, 161, 20));
         label_4->setStyleSheet(QString::fromUtf8("background-color: rgb(127, 127, 127);\n"
 "color: rgb(255, 255, 255);"));
         label_4->setAlignment(Qt::AlignmentFlag::AlignCenter);
@@ -85,47 +85,47 @@ public:
         plainTextEdit->setGeometry(QRect(20, 90, 231, 131));
         label_5 = new QLabel(StarWars);
         label_5->setObjectName("label_5");
-        label_5->setGeometry(QRect(10, 70, 251, 20));
+        label_5->setGeometry(QRect(20, 70, 231, 20));
         label_5->setStyleSheet(QString::fromUtf8("background-color: rgb(127, 127, 127);\n"
 "color: rgb(255, 255, 255);"));
         label_5->setAlignment(Qt::AlignmentFlag::AlignCenter);
         label_6 = new QLabel(StarWars);
         label_6->setObjectName("label_6");
-        label_6->setGeometry(QRect(280, 30, 121, 20));
+        label_6->setGeometry(QRect(270, 10, 121, 20));
         label_6->setStyleSheet(QString::fromUtf8("background-color: rgb(127, 127, 127);\n"
 "color: rgb(255, 255, 255);"));
         label_6->setAlignment(Qt::AlignmentFlag::AlignCenter);
         label_7 = new QLabel(StarWars);
         label_7->setObjectName("label_7");
-        label_7->setGeometry(QRect(280, 80, 121, 20));
+        label_7->setGeometry(QRect(270, 60, 121, 20));
         label_7->setStyleSheet(QString::fromUtf8("background-color: rgb(127, 127, 127);\n"
 "color: rgb(255, 255, 255);"));
         label_7->setAlignment(Qt::AlignmentFlag::AlignCenter);
         label_8 = new QLabel(StarWars);
         label_8->setObjectName("label_8");
-        label_8->setGeometry(QRect(280, 130, 121, 20));
+        label_8->setGeometry(QRect(270, 110, 121, 20));
         label_8->setStyleSheet(QString::fromUtf8("background-color: rgb(127, 127, 127);\n"
 "color: rgb(255, 255, 255);"));
         label_8->setAlignment(Qt::AlignmentFlag::AlignCenter);
         doubleSpinBox_2 = new QDoubleSpinBox(StarWars);
         doubleSpinBox_2->setObjectName("doubleSpinBox_2");
-        doubleSpinBox_2->setGeometry(QRect(280, 150, 121, 22));
+        doubleSpinBox_2->setGeometry(QRect(270, 130, 121, 22));
         doubleSpinBox_2->setDecimals(1);
         doubleSpinBox_2->setMaximum(200.000000000000000);
         doubleSpinBox_2->setValue(2.000000000000000);
         label_9 = new QLabel(StarWars);
         label_9->setObjectName("label_9");
-        label_9->setGeometry(QRect(280, 180, 121, 20));
+        label_9->setGeometry(QRect(270, 160, 121, 20));
         label_9->setStyleSheet(QString::fromUtf8("background-color: rgb(127, 127, 127);\n"
 "color: rgb(255, 255, 255);"));
         label_9->setAlignment(Qt::AlignmentFlag::AlignCenter);
         pushButton = new QPushButton(StarWars);
         pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(320, 210, 41, 41));
+        pushButton->setGeometry(QRect(310, 190, 41, 41));
         pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         pushButton_2 = new QPushButton(StarWars);
         pushButton_2->setObjectName("pushButton_2");
-        pushButton_2->setGeometry(QRect(290, 260, 93, 29));
+        pushButton_2->setGeometry(QRect(280, 240, 93, 29));
 
         retranslateUi(StarWars);
         QObject::connect(buttonBox, &QDialogButtonBox::accepted, StarWars, qOverload<>(&QDialog::accept));

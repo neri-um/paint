@@ -2,6 +2,7 @@ release/main.o
 release/ajustelineal.o
 release/bajorelieve.o
 release/capturadevideo.o
+release/inpaint.o
 release/mainwindow.o
 release/imagenes.o
 release/dialognueva.o
@@ -22,6 +23,7 @@ release/moc_bajorelieve.o
 release/moc_capturadevideo.o
 release/moc_dialognueva.o
 release/moc_brillocontraste.o
+release/moc_inpaint.o
 release/moc_matsatlum.o
 release/moc_pincharestirar.o
 release/moc_starwars.o

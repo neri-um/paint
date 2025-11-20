@@ -36,10 +36,10 @@ public:
         if (MatSatLum->objectName().isEmpty())
             MatSatLum->setObjectName("MatSatLum");
         MatSatLum->setWindowModality(Qt::WindowModality::WindowModal);
-        MatSatLum->resize(313, 300);
+        MatSatLum->resize(297, 331);
         buttonBox = new QDialogButtonBox(MatSatLum);
         buttonBox->setObjectName("buttonBox");
-        buttonBox->setGeometry(QRect(40, 240, 201, 32));
+        buttonBox->setGeometry(QRect(30, 280, 201, 32));
         buttonBox->setOrientation(Qt::Orientation::Horizontal);
         buttonBox->setStandardButtons(QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok);
         label = new QLabel(MatSatLum);
@@ -81,7 +81,7 @@ public:
         label_3->setAlignment(Qt::AlignmentFlag::AlignCenter);
         dial = new QDial(MatSatLum);
         dial->setObjectName("dial");
-        dial->setGeometry(QRect(100, 150, 81, 81));
+        dial->setGeometry(QRect(90, 150, 121, 111));
         dial->setMaximum(255);
         dial->setWrapping(true);
         dial->setNotchTarget(3.000000000000000);

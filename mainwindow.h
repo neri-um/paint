@@ -78,6 +78,7 @@ private slots:
     void on_actionPinchar_estirar_triggered();
     void on_actionStar_Wars_triggered();
     void on_actionMatiz_Saturaci_n_Luminosidad_triggered();
+    void on_actionInPaint_triggered();
 };
 
 extern MainWindow *w;

@@ -92,7 +92,8 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         "on_actionEscala_de_color_triggered",
         "on_actionPinchar_estirar_triggered",
         "on_actionStar_Wars_triggered",
-        "on_actionMatiz_Saturaci_n_Luminosidad_triggered"
+        "on_actionMatiz_Saturaci_n_Luminosidad_triggered",
+        "on_actionInPaint_triggered"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -204,6 +205,8 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         QtMocHelpers::SlotData<void()>(53, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_actionMatiz_Saturaci_n_Luminosidad_triggered'
         QtMocHelpers::SlotData<void()>(54, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_actionInPaint_triggered'
+        QtMocHelpers::SlotData<void()>(55, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -279,6 +282,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 49: _t->on_actionPinchar_estirar_triggered(); break;
         case 50: _t->on_actionStar_Wars_triggered(); break;
         case 51: _t->on_actionMatiz_Saturaci_n_Luminosidad_triggered(); break;
+        case 52: _t->on_actionInPaint_triggered(); break;
         default: ;
         }
     }
@@ -303,14 +307,14 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 52)
+        if (_id < 53)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 52;
+        _id -= 53;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 52)
+        if (_id < 53)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 52;
+        _id -= 53;
     }
     return _id;
 }
