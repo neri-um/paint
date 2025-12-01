@@ -398,7 +398,7 @@ p, li { white-space: pre-wrap; }
      <x>0</x>
      <y>0</y>
      <width>600</width>
-     <height>25</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuArchivo">
@@ -472,6 +472,7 @@ p, li { white-space: pre-wrap; }
     <addaction name="actionMedia_ponderada"/>
     <addaction name="actionAjuste_Lineal_Histograma"/>
     <addaction name="actionEscala_de_color"/>
+    <addaction name="actionPerspectiva"/>
    </widget>
    <widget class="QMenu" name="menuEfectos">
     <property name="title">
@@ -742,6 +743,11 @@ p, li { white-space: pre-wrap; }
   <action name="actionInPaint">
    <property name="text">
     <string>InPaint</string>
+   </property>
+  </action>
+  <action name="actionPerspectiva">
+   <property name="text">
+    <string>Perspectiva...</string>
    </property>
   </action>
  </widget>

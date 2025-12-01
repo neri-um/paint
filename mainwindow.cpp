@@ -24,6 +24,7 @@ using namespace cv;
 #include "starwars.h"
 #include "matsatlum.h"
 #include <inpaint.h>
+#include "perspectiva.h"
 
 QString FiltroImagen = "Todos los formatos (*.jpg *.jpeg *.jpe .jp2 *.tif *.tiff *.png *.gif *.bmp *.dib *.webp *.ppm);;Archivos JPG (*.jpg *.jpeg *.jpe);;Archivos TIF (*.tif *.tiff);;Archivos PNG (*.png);;Archivos WEBP (*.webp);;Archivos GIF (*.gif);;Archivos BMP (*.bmp *.dib);;Otros (*.*)";
 
@@ -494,6 +495,16 @@ void MainWindow::on_actionInPaint_triggered()
     if (foto_activa() != -1){
         Inpaint in(foto_activa(), this);
         in.exec();
+    }
+}
+
+
+void MainWindow::on_actionPerspectiva_triggered()
+{
+    if (foto_activa() != -1){
+        Perspectiva pe(this);
+        pe.exec();
+
     }
 }
 

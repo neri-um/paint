@@ -692,6 +692,33 @@ void escala_color (int nfoto, int nres)
 
 //---------------------------------------------------------------------------
 
+void ver_perspectiva (int norig, int ndest, Point2f porig[], Point2f pdest[], bool guardar)
+{
+    Mat M = getPerspectiveTransform(porig, pdest);
+    Mat imgdest = foto[ndest].img.clone();
+    warpPerspective(foto[norig].img, imgdest, M, imgdest.size(), INTER_CUBIC, BORDER_TRANSPARENT);
+
+    if(guardar) {
+        imgdest.copyTo(foto[ndest].img);
+        foto[ndest].modificada=true;
+    }
+    Mat imgorig= foto[norig].img.clone();
+    for(int i=0; i<4; i++){
+        line(imgdest, pdest[i], pdest[(i+1)%4], CV_RGB(0,0,0), 2);
+        line(imgorig, porig[i], porig[(i+1)%4], CV_RGB(0,0,0), 2);
+    }
+    for(int i=0; i<4; i++){
+        circle(imgdest, pdest[i], 10, CV_RGB(0,0,0), -1);
+        circle(imgdest, pdest[i], 8, CV_RGB(255,0,0), -1);
+        circle(imgorig, porig[i], 10, CV_RGB(0,0,0), -1);
+        circle(imgorig, porig[i], 8, CV_RGB(0,255,0), -1);
+    }
+    imshow("Destino", imgdest);
+    imshow("Origen", imgorig);
+}
+
+//---------------------------------------------------------------------------
+
 void ver_pinchar_estirar (int nfoto, int nres, int cx, int cy, double grado, double radio, bool guardar)
 {
     Mat S(foto[nfoto].img.rows, foto[nfoto].img.cols, CV_32FC1);

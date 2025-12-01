@@ -8,6 +8,7 @@ release/imagenes.o
 release/dialognueva.o
 release/brillocontraste.o
 release/matsatlum.o
+release/perspectiva.o
 release/pincharestirar.o
 release/starwars.o
 release/suavizados.o
@@ -25,6 +26,7 @@ release/moc_dialognueva.o
 release/moc_brillocontraste.o
 release/moc_inpaint.o
 release/moc_matsatlum.o
+release/moc_perspectiva.o
 release/moc_pincharestirar.o
 release/moc_starwars.o
 release/moc_suavizados.o

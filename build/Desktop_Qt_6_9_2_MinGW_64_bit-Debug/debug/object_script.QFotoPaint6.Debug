@@ -8,6 +8,7 @@ debug/imagenes.o
 debug/dialognueva.o
 debug/brillocontraste.o
 debug/matsatlum.o
+debug/perspectiva.o
 debug/pincharestirar.o
 debug/starwars.o
 debug/suavizados.o
@@ -25,6 +26,7 @@ debug/moc_dialognueva.o
 debug/moc_brillocontraste.o
 debug/moc_inpaint.o
 debug/moc_matsatlum.o
+debug/moc_perspectiva.o
 debug/moc_pincharestirar.o
 debug/moc_starwars.o
 debug/moc_suavizados.o

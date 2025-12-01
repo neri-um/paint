@@ -70,6 +70,7 @@ public:
     QAction *actionStar_Wars;
     QAction *actionMatiz_Saturaci_n_Luminosidad;
     QAction *actionInPaint;
+    QAction *actionPerspectiva;
     QWidget *centralWidget;
     QToolButton *toolButton;
     QToolButton *toolButton_2;
@@ -197,6 +198,8 @@ public:
         actionMatiz_Saturaci_n_Luminosidad->setObjectName("actionMatiz_Saturaci_n_Luminosidad");
         actionInPaint = new QAction(MainWindow);
         actionInPaint->setObjectName("actionInPaint");
+        actionPerspectiva = new QAction(MainWindow);
+        actionPerspectiva->setObjectName("actionPerspectiva");
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName("centralWidget");
         toolButton = new QToolButton(centralWidget);
@@ -311,7 +314,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName("menuBar");
-        menuBar->setGeometry(QRect(0, 0, 600, 25));
+        menuBar->setGeometry(QRect(0, 0, 600, 26));
         menuArchivo = new QMenu(menuBar);
         menuArchivo->setObjectName("menuArchivo");
         menuEdici_n = new QMenu(menuBar);
@@ -384,6 +387,7 @@ public:
         menuTransformar->addAction(actionMedia_ponderada);
         menuTransformar->addAction(actionAjuste_Lineal_Histograma);
         menuTransformar->addAction(actionEscala_de_color);
+        menuTransformar->addAction(actionPerspectiva);
         menuRotar->addAction(actionRotar_90);
         menuRotar->addAction(actionRotar_180);
         menuRotar->addAction(actionRotar_91);
@@ -454,6 +458,7 @@ public:
         actionStar_Wars->setText(QCoreApplication::translate("MainWindow", "Star Wars...", nullptr));
         actionMatiz_Saturaci_n_Luminosidad->setText(QCoreApplication::translate("MainWindow", "Matiz/Saturaci\303\263n/Luminosidad...", nullptr));
         actionInPaint->setText(QCoreApplication::translate("MainWindow", "InPaint", nullptr));
+        actionPerspectiva->setText(QCoreApplication::translate("MainWindow", "Perspectiva...", nullptr));
         toolButton->setText(QCoreApplication::translate("MainWindow", "...", nullptr));
         toolButton_2->setText(QCoreApplication::translate("MainWindow", "...", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"

@@ -154,6 +154,9 @@ void ver_brillo_contraste (int nfoto, double suma, double prod,
 
 void ver_matsatlum (int nfoto, int matiz, double saturacion, double luminosidad, bool guardar = false);
 
+
+void ver_perspectiva (int norig, int ndest, Point2f porig[4], Point2f pdest[], bool guardar= false);
+
 void ver_brillo_contraste_gama (int nfoto, double suma, double prod, double gama, bool guardar);
 //ajuste de matiz saturación/luminosidad
 
