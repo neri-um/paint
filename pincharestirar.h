@@ -20,6 +20,9 @@ private slots:
 
     void on_horizontalSlider_2_valueChanged(int value);
 
+    void on_PincharEstirar_accepted();
+    void on_PincharEstirar_rejected();
+
 private:
     Ui::PincharEstirar *ui;
     int nfoto;

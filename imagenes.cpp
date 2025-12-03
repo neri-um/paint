@@ -343,7 +343,7 @@ void cb_elipse (int factual, int x, int y)
     else {
         Mat res(im.size(), im.type(), color_pincel);
         Mat cop(im.size(), im.type(), CV_RGB(0,0,0));
-        ellipse(im, Point(downx, downy), Size(abs(x-downx), abs(y-downy)), 0, 0, 360, CV_RGB(255,255,255), radio_pincel*2-1);
+        ellipse(cop, Point(downx, downy), Size(abs(x-downx), abs(y-downy)), 0, 0, 360, CV_RGB(255,255,255), radio_pincel*2-1);
         blur(cop, cop, Size(difum_pincel*2+1, difum_pincel*2+1));
         multiply(res, cop, res, 1.0/255.0);
         bitwise_not(cop, cop);
@@ -775,8 +775,8 @@ void ver_matsatlum (int nfoto, int matiz, double saturacion, double luminosidad,
     canales[0].convertTo(h16, CV_16S,1,matiz);
     bitwise_and(h16, 255, h16);
     h16.convertTo(canales[0], CV_8U);
-    canales[1]+=luminosidad;
-    canales[2]+=saturacion;
+    canales[1]+=saturacion;
+    canales[2]+=luminosidad;
     merge(canales,3,hls);
     Mat res;
     cvtColor(hls,res,COLOR_HLS2BGR_FULL);

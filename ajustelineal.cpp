@@ -29,7 +29,7 @@ void AjusteLineal::on_horizontalSlider_valueChanged(int value)
 
 void AjusteLineal::on_spinBox_valueChanged(int arg1)
 {
-    ui->horizontalSlider_3->setValue(arg1);
+    ui->horizontalSlider->setValue(arg1);
 }
 
 
@@ -44,7 +44,7 @@ void AjusteLineal::on_horizontalSlider_2_valueChanged(int value)
 
 void AjusteLineal::on_spinBox_2_valueChanged(int arg1)
 {
-    ui->horizontalSlider_4->setValue(arg1);
+    ui->horizontalSlider_2->setValue(arg1);
 }
 
 
