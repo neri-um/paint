@@ -106,7 +106,7 @@ color: rgb(255, 255, 255);</string>
     <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QSlider" name="horizontalSlider_3">
+  <widget class="QSlider" name="horizontalSlider_2">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -134,7 +134,7 @@ color: rgb(255, 255, 255);</string>
     <number>10</number>
    </property>
   </widget>
-  <widget class="QSlider" name="horizontalSlider_4">
+  <widget class="QSlider" name="horizontalSlider">
    <property name="geometry">
     <rect>
      <x>10</x>

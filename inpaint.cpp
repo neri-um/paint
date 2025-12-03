@@ -81,7 +81,7 @@ void Inpaint::on_Inpaint_rejected()
 
 void Inpaint::on_checkBox_stateChanged(int arg1)
 {
-    in_previs = 1;
+    in_previs = (arg1 != 0);
 }
 
 

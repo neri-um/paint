@@ -29,8 +29,8 @@ public:
     QCheckBox *checkBox;
     QSpinBox *spinBox;
     QLabel *label_3;
-    QSlider *horizontalSlider_3;
-    QSlider *horizontalSlider_4;
+    QSlider *horizontalSlider_2;
+    QSlider *horizontalSlider;
     QLabel *label_4;
 
     void setupUi(QDialog *AjusteLineal)
@@ -66,25 +66,25 @@ public:
         label_3->setStyleSheet(QString::fromUtf8("background-color: rgb(128, 128, 128);\n"
 "color: rgb(255, 255, 255);"));
         label_3->setAlignment(Qt::AlignmentFlag::AlignCenter);
-        horizontalSlider_3 = new QSlider(AjusteLineal);
-        horizontalSlider_3->setObjectName("horizontalSlider_3");
-        horizontalSlider_3->setGeometry(QRect(10, 90, 271, 21));
-        horizontalSlider_3->setMinimum(0);
-        horizontalSlider_3->setMaximum(100);
-        horizontalSlider_3->setValue(5);
-        horizontalSlider_3->setOrientation(Qt::Orientation::Horizontal);
-        horizontalSlider_3->setTickPosition(QSlider::TickPosition::TicksBelow);
-        horizontalSlider_3->setTickInterval(10);
-        horizontalSlider_4 = new QSlider(AjusteLineal);
-        horizontalSlider_4->setObjectName("horizontalSlider_4");
-        horizontalSlider_4->setGeometry(QRect(10, 40, 271, 21));
-        horizontalSlider_4->setMinimum(0);
-        horizontalSlider_4->setMaximum(100);
-        horizontalSlider_4->setPageStep(16);
-        horizontalSlider_4->setValue(5);
-        horizontalSlider_4->setOrientation(Qt::Orientation::Horizontal);
-        horizontalSlider_4->setTickPosition(QSlider::TickPosition::TicksBelow);
-        horizontalSlider_4->setTickInterval(32);
+        horizontalSlider_2 = new QSlider(AjusteLineal);
+        horizontalSlider_2->setObjectName("horizontalSlider_2");
+        horizontalSlider_2->setGeometry(QRect(10, 90, 271, 21));
+        horizontalSlider_2->setMinimum(0);
+        horizontalSlider_2->setMaximum(100);
+        horizontalSlider_2->setValue(5);
+        horizontalSlider_2->setOrientation(Qt::Orientation::Horizontal);
+        horizontalSlider_2->setTickPosition(QSlider::TickPosition::TicksBelow);
+        horizontalSlider_2->setTickInterval(10);
+        horizontalSlider = new QSlider(AjusteLineal);
+        horizontalSlider->setObjectName("horizontalSlider");
+        horizontalSlider->setGeometry(QRect(10, 40, 271, 21));
+        horizontalSlider->setMinimum(0);
+        horizontalSlider->setMaximum(100);
+        horizontalSlider->setPageStep(16);
+        horizontalSlider->setValue(5);
+        horizontalSlider->setOrientation(Qt::Orientation::Horizontal);
+        horizontalSlider->setTickPosition(QSlider::TickPosition::TicksBelow);
+        horizontalSlider->setTickInterval(32);
         label_4 = new QLabel(AjusteLineal);
         label_4->setObjectName("label_4");
         label_4->setGeometry(QRect(10, 70, 271, 16));
