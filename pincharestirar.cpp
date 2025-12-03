@@ -51,3 +51,15 @@ void PincharEstirar::on_horizontalSlider_2_valueChanged(int value)
     ver_pinchar_estirar(pe_nfoto, nres, pe_cx, pe_cy, pe_grado, pe_radio);
 }
 
+void PincharEstirar::on_PincharEstirar_accepted()
+{
+    ver_pinchar_estirar(pe_nfoto, nres, pe_cx, pe_cy, pe_grado, pe_radio, true);
+    destroyWindow("Pinchar/estirar");
+}
+
+void PincharEstirar::on_PincharEstirar_rejected()
+{
+    destroyWindow("Pinchar/estirar");
+    mostrar(pe_nfoto);
+}
+
