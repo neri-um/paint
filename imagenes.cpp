@@ -775,8 +775,8 @@ void ver_matsatlum (int nfoto, int matiz, double saturacion, double luminosidad,
     canales[0].convertTo(h16, CV_16S,1,matiz);
     bitwise_and(h16, 255, h16);
     h16.convertTo(canales[0], CV_8U);
-    canales[1]+=saturacion;
-    canales[2]+=luminosidad;
+    canales[1]+=luminosidad;   // Canal 1 = Lightness
+    canales[2]+=saturacion;    // Canal 2 = Saturation
     merge(canales,3,hls);
     Mat res;
     cvtColor(hls,res,COLOR_HLS2BGR_FULL);

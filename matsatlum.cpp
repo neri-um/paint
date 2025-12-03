@@ -18,13 +18,17 @@ MatSatLum::~MatSatLum()
 
 void MatSatLum::on_horizontalSlider_valueChanged(int value)
 {
-    ver_matsatlum(nfoto, ui->dial->value(), ui->horizontalSlider->value()/100.0, ui->horizontalSlider_2->value()/100.0);
+    ver_matsatlum(nfoto, ui->dial->value(),
+                  (ui->horizontalSlider->value() - 100),      // Saturación: -100 a +200
+                  (ui->horizontalSlider_2->value() - 100));   // Luminosidad: -100 a +200
 }
 
 
 void MatSatLum::on_horizontalSlider_2_valueChanged(int value)
 {
-    ver_matsatlum(nfoto, ui->dial->value(), ui->horizontalSlider->value()/100.0, ui->horizontalSlider_2->value()/100.0);
+    ver_matsatlum(nfoto, ui->dial->value(),
+                  (ui->horizontalSlider->value() - 100),      // Saturación: -100 a +200
+                  (ui->horizontalSlider_2->value() - 100));   // Luminosidad: -100 a +200
 }
 
 
