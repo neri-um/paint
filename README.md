@@ -55,4 +55,4 @@ El software permite la manipulación de medios visuales a través de una arquite
 
 1. Clonar el repositorio:
    ```bash
-   git clone [https://github.com/tu-usuario/nombre-repo.git](https://github.com/tu-usuario/nombre-repo.git)
+   git clone [https://github.com/tu-usuario/nombre-repo.git](https://github.com/neri-um/paint.git)
