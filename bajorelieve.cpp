@@ -11,7 +11,6 @@ Bajorelieve::Bajorelieve(int numfoto, int numres, QWidget *parent)
     nres=numres;
     ntextura=0;
     ver_bajorrelieve(nfoto, nres, ui->dial->value(),ui->horizontalSlider->value()/100.0, ui->spinBox->value(), ntextura);
-    activar_callback_fotos(true);
 }
 
 Bajorelieve::~Bajorelieve()
@@ -22,68 +21,59 @@ Bajorelieve::~Bajorelieve()
 
 void Bajorelieve::on_horizontalSlider_valueChanged(int value)
 {
-    ver_bajorrelieve(nfoto, nres, ui->dial->value(),
-                     ui->horizontalSlider->value()/100.0,
-                     ntextura, ui->spinBox->value());
+    ver_bajorrelieve(nfoto, nres, ui->dial->value(),ui->horizontalSlider->value()/100.0, ui->spinBox->value(), ntextura);
+
 }
 
 
 void Bajorelieve::on_dial_valueChanged(int value)
 {
-    ver_bajorrelieve(nfoto, nres, ui->dial->value(),
-                     ui->horizontalSlider->value()/100.0,
-                     ntextura, ui->spinBox->value());
+    ver_bajorrelieve(nfoto, nres, ui->dial->value(),ui->horizontalSlider->value()/100.0, ui->spinBox->value(), ntextura);
 }
 
 
 void Bajorelieve::on_spinBox_valueChanged(int arg1)
 {
-    ver_bajorrelieve(nfoto, nres, ui->dial->value(),
-                     ui->horizontalSlider->value()/100.0,
-                     ntextura, ui->spinBox->value());
+    ver_bajorrelieve(nfoto, nres, ui->dial->value(),ui->horizontalSlider->value()/100.0, ui->spinBox->value(), ntextura);
+
 }
 
 void Bajorelieve::on_radioButton_clicked()
 {
     ntextura=0;
-    ver_bajorrelieve(nfoto, nres, ui->dial->value(),
-                     ui->horizontalSlider->value()/100.0,
-                     ntextura, ui->spinBox->value());
+    ver_bajorrelieve(nfoto, nres, ui->dial->value(),ui->horizontalSlider->value()/100.0, ui->spinBox->value(), ntextura);
+
 }
 
 
 void Bajorelieve::on_radioButton_2_clicked()
 {
     ntextura=1;
-    ver_bajorrelieve(nfoto, nres, ui->dial->value(),
-                     ui->horizontalSlider->value()/100.0,
-                     ntextura, ui->spinBox->value());
+    ver_bajorrelieve(nfoto, nres, ui->dial->value(),ui->horizontalSlider->value()/100.0, ui->spinBox->value(), ntextura);
+
 }
 
 
 void Bajorelieve::on_radioButton_3_clicked()
 {
     ntextura=2;
-    ver_bajorrelieve(nfoto, nres, ui->dial->value(),
-                     ui->horizontalSlider->value()/100.0,
-                     ntextura, ui->spinBox->value());
+    ver_bajorrelieve(nfoto, nres, ui->dial->value(),ui->horizontalSlider->value()/100.0, ui->spinBox->value(), ntextura);
+
 }
 
 
 void Bajorelieve::on_radioButton_4_clicked()
 {
     ntextura=3;
-    ver_bajorrelieve(nfoto, nres, ui->dial->value(),
-                     ui->horizontalSlider->value()/100.0,
-                     ntextura, ui->spinBox->value());
+    ver_bajorrelieve(nfoto, nres, ui->dial->value(),ui->horizontalSlider->value()/100.0, ui->spinBox->value(), ntextura);
+
 }
 
 
 void Bajorelieve::on_Bajorelieve_accepted()
 {
-    ver_bajorrelieve(nfoto, nres, ui->dial->value(),
-                     ui->horizontalSlider->value()/100.0,
-                     ntextura, ui->spinBox->value());
+    ver_bajorrelieve(nfoto, nres, ui->dial->value(),ui->horizontalSlider->value()/100.0, ui->spinBox->value(), ntextura, true);
+
     destroyWindow("Efecto de bajo relieve");
 }
 

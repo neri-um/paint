@@ -16,14 +16,15 @@ void in_callback (int evento, int x, int y, int flags, void *pt)
         circle(in_imagen, Point(x,y), in_radio_pincel, CV_RGB(255, 255, 255), -1);
         circle(in_mascara, Point(x,y), in_radio_pincel, CV_RGB(255, 255, 255), -1);
         imshow(foto[in_nfoto].nombre, in_imagen);
-        } if (in_previs){
-        Mat res;
-        inpaint(in_imagen, in_mascara, res, 3, INPAINT_TELEA);
-        imshow("InPaint", res);
+        if (in_previs){
+            Mat res;
+            inpaint(in_imagen, in_mascara, res, 3, INPAINT_TELEA);
+            imshow("InPaint", res);
         }
+    }
     else {
         Mat clone = in_imagen.clone();
-        circle(clone, Point(x,y), in_radio_pincel, CV_RGB(255, 255, 255), -1);
+        circle(clone, Point(x,y), in_radio_pincel, CV_RGB(255, 255, 255), 1);
         imshow(foto[in_nfoto].nombre, clone);
     }
 }
@@ -32,7 +33,7 @@ Inpaint::Inpaint(int numfoto, QWidget *parent)
     , ui(new Ui::Inpaint)
 {
     ui->setupUi(this);
-    int in_nfoto=numfoto;
+    in_nfoto=numfoto;
     in_radio_pincel= 20;
     in_imagen= foto[in_nfoto].img.clone();
     in_mascara = Mat(in_imagen.rows, in_imagen.cols, CV_8UC1, Scalar(0));
@@ -81,7 +82,7 @@ void Inpaint::on_Inpaint_rejected()
 
 void Inpaint::on_checkBox_stateChanged(int arg1)
 {
-    in_previs = (arg1 != 0);
+    in_previs = arg1;
 }
 
 

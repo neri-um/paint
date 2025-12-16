@@ -866,8 +866,8 @@ void ver_histograma (int nfoto, int ncanal, int nres)
 
 //---------------------------------------------------------------------------
 
-void ver_bajorrelieve (int nfoto, int nres, double angulo, double grado, int ntextura,
-                      int tamSobel, bool guardar)
+void ver_bajorrelieve (int nfoto, int nres, double angulo, double grado,
+                      int tamSobel, int ntextura, bool guardar)
 {
     QString nombres[4]={":/imagenes/arena.jpg",
                         ":/imagenes/cielo.jpg",

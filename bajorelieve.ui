@@ -223,9 +223,9 @@ color: rgb(255, 255, 255);</string>
   <widget class="QSpinBox" name="spinBox">
    <property name="geometry">
     <rect>
-     <x>370</x>
+     <x>363</x>
      <y>200</y>
-     <width>44</width>
+     <width>71</width>
      <height>29</height>
     </rect>
    </property>

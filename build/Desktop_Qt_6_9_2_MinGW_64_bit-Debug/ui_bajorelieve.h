@@ -105,7 +105,7 @@ public:
         label_4->setAlignment(Qt::AlignmentFlag::AlignCenter);
         spinBox = new QSpinBox(Bajorelieve);
         spinBox->setObjectName("spinBox");
-        spinBox->setGeometry(QRect(370, 200, 44, 29));
+        spinBox->setGeometry(QRect(363, 200, 71, 29));
         spinBox->setMinimum(1);
         spinBox->setMaximum(31);
         spinBox->setSingleStep(2);
