@@ -24,7 +24,7 @@ private slots:
 
     void on_capturadevideo_accepted();
 
-    void on_capturadevideo_destroyed();
+    void on_capturadevideo_rejected();
 
 private:
     Ui::capturadevideo *ui;

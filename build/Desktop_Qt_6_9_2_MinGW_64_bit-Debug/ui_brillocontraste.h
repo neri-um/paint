@@ -106,7 +106,8 @@ public:
         horizontalSlider_3->setObjectName("horizontalSlider_3");
         horizontalSlider_3->setGeometry(QRect(10, 130, 271, 21));
         horizontalSlider_3->setMinimum(0);
-        horizontalSlider_3->setMaximum(100);
+        horizontalSlider_3->setMaximum(400);
+        horizontalSlider_3->setValue(100);
         horizontalSlider_3->setOrientation(Qt::Orientation::Horizontal);
         horizontalSlider_3->setTickPosition(QSlider::TickPosition::TicksBelow);
         horizontalSlider_3->setTickInterval(10);
@@ -119,8 +120,9 @@ public:
         spinBox_3 = new QSpinBox(brillocontrastegamma);
         spinBox_3->setObjectName("spinBox_3");
         spinBox_3->setGeometry(QRect(290, 120, 81, 22));
-        spinBox_3->setMinimum(-100);
-        spinBox_3->setMaximum(100);
+        spinBox_3->setMinimum(0);
+        spinBox_3->setMaximum(400);
+        spinBox_3->setValue(100);
 
         retranslateUi(brillocontrastegamma);
         QObject::connect(buttonBox, &QDialogButtonBox::accepted, brillocontrastegamma, qOverload<>(&QDialog::accept));
@@ -135,7 +137,7 @@ public:
         label->setText(QCoreApplication::translate("brillocontrastegamma", "Brillo", nullptr));
         label_2->setText(QCoreApplication::translate("brillocontrastegamma", "Contraste", nullptr));
         checkBox->setText(QCoreApplication::translate("brillocontrastegamma", "Previsualizar", nullptr));
-        label_3->setText(QCoreApplication::translate("brillocontrastegamma", "Contraste", nullptr));
+        label_3->setText(QCoreApplication::translate("brillocontrastegamma", "Gama", nullptr));
     } // retranslateUi
 
 };

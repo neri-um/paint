@@ -78,13 +78,13 @@ void brillocontraste::on_checkBox_stateChanged(int arg1)
     actualizar();
 }
 
-void brillocontraste::on_brillocontraste_accepted()
+void brillocontraste::on_brillocontrastegamma_accepted()
 {
     actualizar();
-    ver_brillo_contraste(nfoto, suma, multiplica, true);
+    ver_brillo_contraste_gama(nfoto, suma, multiplica, gama, true);
 }
 
-void brillocontraste::on_brillocontraste_rejected()
+void brillocontraste::on_brillocontrastegamma_rejected()
 {
     mostrar(nfoto);
 }

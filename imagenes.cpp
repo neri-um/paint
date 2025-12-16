@@ -260,12 +260,12 @@ void cb_punto (int factual, int x, int y, Scalar color)
         Rect roi(x-t,y-t, 2*t+1, 2*t+1);
         if(roi.x < 0) { // Si se sale horizontal
             roi.width += roi.x;
-            posx=roi.x;
+            posx += roi.x;
             roi.x = 0;
         }
         if (roi.y < 0) { // vertical
-            roi.width += roi.y;
-            posy=roi.y;
+            roi.height += roi.y;
+            posy += roi.y;
             roi.y = 0;
         }
         if(roi.x+roi.width > im.cols){
@@ -630,8 +630,8 @@ void ver_brillo_contraste_gama (int nfoto, double suma, double prod, double gama
     foto[nfoto].img.convertTo(img, CV_8UC3, prod, suma);
     Mat img32f;
     img.convertTo(img32f, CV_32FC3, 1.0/255);
-    pow(img32f, gama, img32f);
-    img32f.convertTo(img, CV_8UC3, 255.0);
+    pow(img32f, 1.0/gama, img32f);
+    img32f.convertTo(img, CV_8UC3, 255);
     imshow(foto[nfoto].nombre, img);
     if (guardar) {
         img.copyTo(foto[nfoto].img);
@@ -775,8 +775,8 @@ void ver_matsatlum (int nfoto, int matiz, double saturacion, double luminosidad,
     canales[0].convertTo(h16, CV_16S,1,matiz);
     bitwise_and(h16, 255, h16);
     h16.convertTo(canales[0], CV_8U);
-    canales[1]+=luminosidad;   // Canal 1 = Lightness
-    canales[2]+=saturacion;    // Canal 2 = Saturation
+    canales[1]*=luminosidad;   // Canal 1 = Lightness
+    canales[2]*=saturacion;    // Canal 2 = Saturation
     merge(canales,3,hls);
     Mat res;
     cvtColor(hls,res,COLOR_HLS2BGR_FULL);

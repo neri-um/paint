@@ -8,27 +8,28 @@ MatSatLum::MatSatLum(int numfoto, QWidget *parent)
 {
     ui->setupUi(this);
     nfoto = numfoto;
+    activar_callback_fotos(false);
 }
 
 MatSatLum::~MatSatLum()
 {
     delete ui;
-    activar_callback_fotos(false);
+    activar_callback_fotos(true);
 }
 
 void MatSatLum::on_horizontalSlider_valueChanged(int value)
 {
     ver_matsatlum(nfoto, ui->dial->value(),
-                  (ui->horizontalSlider->value() - 100),      // Saturación: -100 a +200
-                  (ui->horizontalSlider_2->value() - 100));   // Luminosidad: -100 a +200
+                  (ui->horizontalSlider->value()/100.0),
+                  (ui->horizontalSlider_2->value()/100.0));
 }
 
 
 void MatSatLum::on_horizontalSlider_2_valueChanged(int value)
 {
     ver_matsatlum(nfoto, ui->dial->value(),
-                  (ui->horizontalSlider->value() - 100),      // Saturación: -100 a +200
-                  (ui->horizontalSlider_2->value() - 100));   // Luminosidad: -100 a +200
+                  (ui->horizontalSlider->value()/100.0),
+                  (ui->horizontalSlider_2->value()/100.0));
 }
 
 

@@ -44,7 +44,9 @@ template <> constexpr inline auto PincharEstirar::qt_create_metaobjectdata<qt_me
         "value",
         "on_horizontalSlider_2_valueChanged",
         "on_PincharEstirar_accepted",
-        "on_PincharEstirar_rejected"
+        "on_PincharEstirar_rejected",
+        "on_buttonBox_accepted",
+        "on_buttonBox_rejected"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -60,6 +62,10 @@ template <> constexpr inline auto PincharEstirar::qt_create_metaobjectdata<qt_me
         QtMocHelpers::SlotData<void()>(5, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_PincharEstirar_rejected'
         QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_buttonBox_accepted'
+        QtMocHelpers::SlotData<void()>(7, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_buttonBox_rejected'
+        QtMocHelpers::SlotData<void()>(8, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -111,14 +117,14 @@ int PincharEstirar::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 6)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 6;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
+        if (_id < 6)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 4;
+        _id -= 6;
     }
     return _id;
 }

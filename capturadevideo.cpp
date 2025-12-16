@@ -53,7 +53,7 @@ void capturadevideo::on_capturadevideo_accepted()
 }
 
 
-void capturadevideo::on_capturadevideo_destroyed()
+void capturadevideo::on_capturadevideo_rejected()
 {
     destroyWindow("Frame del video");
 }

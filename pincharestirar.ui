@@ -136,5 +136,18 @@ color: rgb(255, 255, 255);</string>
   </widget>
  </widget>
  <resources/>
- <connections/>
+<connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>PincharEstirar</receiver>
+   <slot>accept()</slot>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>PincharEstirar</receiver>
+   <slot>reject()</slot>
+  </connection>
+ </connections>
 </ui>

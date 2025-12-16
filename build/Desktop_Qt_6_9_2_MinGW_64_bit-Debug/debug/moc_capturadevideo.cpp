@@ -45,7 +45,7 @@ template <> constexpr inline auto capturadevideo::qt_create_metaobjectdata<qt_me
         "on_spinBox_valueChanged",
         "arg1",
         "on_capturadevideo_accepted",
-        "on_capturadevideo_destroyed"
+        "on_capturadevideo_rejected"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -59,7 +59,7 @@ template <> constexpr inline auto capturadevideo::qt_create_metaobjectdata<qt_me
         }}),
         // Slot 'on_capturadevideo_accepted'
         QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'on_capturadevideo_destroyed'
+        // Slot 'on_capturadevideo_rejected'
         QtMocHelpers::SlotData<void()>(7, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
@@ -87,7 +87,7 @@ void capturadevideo::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         case 0: _t->on_horizontalSlider_valueChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         case 1: _t->on_spinBox_valueChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         case 2: _t->on_capturadevideo_accepted(); break;
-        case 3: _t->on_capturadevideo_destroyed(); break;
+        case 3: _t->on_capturadevideo_rejected(); break;
         default: ;
         }
     }

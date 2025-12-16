@@ -49,7 +49,7 @@ void StarWars::on_StarWars_rejected()
 void StarWars::on_StarWars_accepted()
 {
     QString nombre= QFileDialog::getSaveFileName();
-    if (!nombre.isEmpty())
+    if (nombre.isEmpty())
         return;
     int codigocc;
     QString cad= ui->comboBox->currentText();

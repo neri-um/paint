@@ -47,10 +47,10 @@ template <> constexpr inline auto brillocontraste::qt_create_metaobjectdata<qt_m
         "on_horizontalSlider_2_valueChanged",
         "on_checkBox_stateChanged",
         "arg1",
-        "on_brillocontraste_accepted",
-        "on_brillocontraste_rejected",
         "on_spinBox_3_valueChanged",
-        "on_horizontalSlider_3_valueChanged"
+        "on_horizontalSlider_3_valueChanged",
+        "on_brillocontrastegamma_accepted",
+        "on_brillocontrastegamma_rejected"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -74,18 +74,18 @@ template <> constexpr inline auto brillocontraste::qt_create_metaobjectdata<qt_m
         QtMocHelpers::SlotData<void(int)>(7, 2, QMC::AccessPrivate, QMetaType::Void, {{
             { QMetaType::Int, 8 },
         }}),
-        // Slot 'on_brillocontraste_accepted'
-        QtMocHelpers::SlotData<void()>(9, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'on_brillocontraste_rejected'
-        QtMocHelpers::SlotData<void()>(10, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_spinBox_3_valueChanged'
-        QtMocHelpers::SlotData<void(int)>(11, 2, QMC::AccessPrivate, QMetaType::Void, {{
+        QtMocHelpers::SlotData<void(int)>(9, 2, QMC::AccessPrivate, QMetaType::Void, {{
             { QMetaType::Int, 8 },
         }}),
         // Slot 'on_horizontalSlider_3_valueChanged'
-        QtMocHelpers::SlotData<void(int)>(12, 2, QMC::AccessPrivate, QMetaType::Void, {{
+        QtMocHelpers::SlotData<void(int)>(10, 2, QMC::AccessPrivate, QMetaType::Void, {{
             { QMetaType::Int, 5 },
         }}),
+        // Slot 'on_brillocontrastegamma_accepted'
+        QtMocHelpers::SlotData<void()>(11, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_brillocontrastegamma_rejected'
+        QtMocHelpers::SlotData<void()>(12, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -114,10 +114,10 @@ void brillocontraste::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
         case 2: _t->on_horizontalSlider_valueChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         case 3: _t->on_horizontalSlider_2_valueChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         case 4: _t->on_checkBox_stateChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 5: _t->on_brillocontraste_accepted(); break;
-        case 6: _t->on_brillocontraste_rejected(); break;
-        case 7: _t->on_spinBox_3_valueChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 8: _t->on_horizontalSlider_3_valueChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 5: _t->on_spinBox_3_valueChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 6: _t->on_horizontalSlider_3_valueChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 7: _t->on_brillocontrastegamma_accepted(); break;
+        case 8: _t->on_brillocontrastegamma_rejected(); break;
         default: ;
         }
     }

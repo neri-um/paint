@@ -23,6 +23,10 @@ private slots:
     void on_PincharEstirar_accepted();
     void on_PincharEstirar_rejected();
 
+    void on_buttonBox_accepted();
+
+    void on_buttonBox_rejected();
+
 private:
     Ui::PincharEstirar *ui;
     int nfoto;

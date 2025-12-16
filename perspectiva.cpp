@@ -80,7 +80,7 @@ void Perspectiva::on_Perspectiva_accepted()
     ver_perspectiva(npers_orig, npers_dest, ppers_orig, ppers_dest, true);
     destroyWindow("Origen");
     destroyWindow("Destino");
-    mostrar(npers_orig);
+    mostrar(npers_dest);
 }
 
 

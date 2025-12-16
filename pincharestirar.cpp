@@ -64,3 +64,5 @@ void PincharEstirar::on_PincharEstirar_rejected()
     mostrar(pe_nfoto);
 }
 
+
+

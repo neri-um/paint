@@ -73,6 +73,8 @@ public:
         horizontalSlider_2->setTickInterval(32);
 
         retranslateUi(PincharEstirar);
+        QObject::connect(buttonBox, &QDialogButtonBox::accepted, PincharEstirar, qOverload<>(&QDialog::accept));
+        QObject::connect(buttonBox, &QDialogButtonBox::rejected, PincharEstirar, qOverload<>(&QDialog::reject));
 
         QMetaObject::connectSlotsByName(PincharEstirar);
     } // setupUi
